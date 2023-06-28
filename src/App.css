@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Jaldibold";
+  src: url("./assets/fonts/jaldi-bold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/jaldi-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "Jaldi";
+  src: url("./assets/fonts/jaldi-regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/jaldi-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+body {
+  font-family: "Jaldi";
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   align-items: center;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.header > h1 {
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header > div > * {
+  margin: 0;
+  padding: 0;
+}
+
+.shop {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  grid-column: 2 / 3;
+}
+
+.cart-container {
+  display: grid;
+  grid-column: -2 / -1;
+
+  justify-content: end;
 }
