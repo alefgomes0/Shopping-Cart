@@ -21,23 +21,35 @@
 }
 
 body {
+  grid-template-rows: auto 1fr;
   font-family: "Jaldi";
   margin: 0;
-  padding: 0 1rem;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-row: 1 / 2;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr 1fr 1fr;
   align-items: center;
   align-content: center;
   justify-content: center;
   justify-content: center;
+  color: #fff;
+  background-color: #000;
+  padding: 0 1rem;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: auto;
 }
 
 .header > h1 {
-  font-size: 4rem;
+  display: inline;
+  font-size: 4.5rem;
   padding: 0;
   margin: 0;
 }
@@ -47,16 +59,52 @@ body {
   padding: 0;
 }
 
-.shop {
+.header > div > h3,
+.header > div > a{
+  font-size: 1.5rem;
+}
+
+a.active {
+  color: #ffc600;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid #433ca7;
+  padding-bottom: 1px;
+}
+
+a:visited,
+a {
+  color: none;
+}
+
+.header-links {
   display: flex;
   align-items: center;
   gap: 2rem;
-  grid-column: 2 / 3;
+  grid-column: -3 / -2
 }
 
 .cart-container {
-  display: grid;
-  grid-column: -2 / -1;
+  display: flex;
+  justify-self: end;
+}
 
-  justify-content: end;
+.home-content {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img {
+  display: block;
 }
