@@ -7,8 +7,8 @@ export const Header = () => {
       <div className="header-links">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/shop">Shop</NavLink>
-        <h3>About</h3>
-        <h3>Contact</h3>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </div>
       <div className="cart-container">
         <svg
@@ -16,6 +16,7 @@ export const Header = () => {
           width="30"
           height="30"
           viewBox="0 0 512 512"
+          role="img"
         >
           <circle
             cx="176"

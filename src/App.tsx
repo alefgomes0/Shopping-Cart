@@ -1,18 +1,25 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { NoMatch } from "./components/NoMatch/NoMatch";
 import "./App.css";
 import { HomeContent } from "./components/HomeContent/HomeContent";
+import { ShopContent } from "./components/ShopContent/ShopContent";
+import { AboutContent } from "./components/AboutContent/AboutContent";
+import { ContactContent } from "./components/ContactContent/ContactContent";
+
 
 export const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<HomeContent />} />
+        <Route path="shop" element={<ShopContent />} />
+        <Route path="about" element={<AboutContent />} />
+        <Route path="contact" element={<ContactContent />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 };
 
