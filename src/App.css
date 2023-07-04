@@ -48,7 +48,7 @@ body {
     rgba(11, 11, 11, 1) 75%,
     rgba(29, 29, 29, 1) 100%
   );
-  padding: 0 19px 0 20px;
+  padding: 0 15px 0 17px;
   z-index: 10;
   position: fixed;
   width: 100%;
@@ -147,7 +147,7 @@ body {
   width: auto;
   height: auto;
   gap: 10px;
-  padding: 45px 20px;
+  padding: 45px 17px;
   margin: 0;
 }
 
@@ -178,24 +178,29 @@ a > button {
 
 .shop-content {
   display: grid;
-  height: 90svh;
-  grid-template-rows: 1fr 8fr;
-  grid-template-columns: 2fr 8fr;
+  height: 100svh;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 8.2fr;
 }
 
 .shop-nav {
+  display: grid;
+  grid-template-rows: 1fr;
   align-self: center;
-  grid-row: 2 / 3;
+  grid-row: 1 / -1;
   padding-left: 20px;
+  border-right: 2px solid #4f4848;
+  height: 100%;
 }
 
-.shop-nav > h3 {
+.shop-nav > .books-category > h3 {
   font-size: 2.2rem;
 }
 
 .books-category {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-self: center;
+  grid-template-rows: auto;
   gap: 10px;
 }
 
@@ -205,28 +210,69 @@ a > button {
   align-items: center;
   align-content: center;
   height: min-content;
-  padding-left: 10px;
+  justify-self: start;
+  align-self: center;
+  gap: 1px;
+}
+
+.category > * {
+  margin: 0;
+  padding: 0;
 }
 
 .category > h5 {
-  margin: 0;
   padding: 0 4px 0 3px;
   font-size: 1.2rem;
+  opacity: 0.9;
 }
 
 .category > h6 {
-  margin: 0;
-  padding: 0;
   font-size: 0.9rem;
-  opacity: 0.9;
-  padding-top: 4px;
+  opacity: 0.7;
+  text-align: center;
+  padding-top: 1px;
 }
 
-@media(max-width: 1000px) {
+.shop-books {
+  display: grid;
+  grid-template-rows: 1.5fr auto 8fr;
+}
+
+.search-container {
+  grid-row: 2 / 3;
+}
+
+.books-display {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(50px, 300px, 400px), 1fr)
+  );
+  grid-template-rows: repeat(auto-fit, minmax(clamp(100px, 300px, 400px), 1fr));
+  grid-row: -2 / -1;
+  gap: 20px;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+.book > * {
+  margin: 0;
+  padding: 0;
+}
+
+.book-cover {
+  width: 150px;
+  height: 300px;
+}
+
+@media (max-width: 1000px) {
   .header > h1 {
     grid-column: 1 / 2;
   }
-
 
   .header-links {
     grid-column: 3 / 4;

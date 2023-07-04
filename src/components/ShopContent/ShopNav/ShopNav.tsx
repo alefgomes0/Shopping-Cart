@@ -5,7 +5,7 @@ type genresProperties = {
 };
 
 export const ShopNav = () => {
-  let genres: genresProperties = {};
+  const genres: genresProperties = {};
 
   const registryGenres = () => {
     ShopData.forEach((book) => {
@@ -18,8 +18,8 @@ export const ShopNav = () => {
 
   return (
     <div className="shop-nav">
-      <h3>Genres</h3>
       <div className="books-category">
+        <h3>Genres</h3>
         {Object.keys(genres).map((genre: string) => {
           return (
             <div className="category" key={genre}>

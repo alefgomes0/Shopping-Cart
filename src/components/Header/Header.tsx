@@ -24,9 +24,9 @@ export const Header = () => {
             r="16"
             fill="none"
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="32"
           />
           <circle
             cx="400"
@@ -34,24 +34,24 @@ export const Header = () => {
             r="16"
             fill="none"
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="32"
           />
           <path
             fill="none"
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="32"
             d="M48 80h64l48 272h256"
           />
           <path
             fill="none"
             stroke="white"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="32"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="32"
             d="M160 288h249.44a8 8 0 0 0 7.85-6.43l28.8-144a8 8 0 0 0-7.85-9.57H128"
           />
         </svg>

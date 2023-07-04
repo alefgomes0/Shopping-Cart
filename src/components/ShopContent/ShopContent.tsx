@@ -1,4 +1,5 @@
 import { ShopNav } from "./ShopNav/ShopNav";
+import { ShopBooks } from "./ShopBooks/ShopBooks";
 
 type ShopContentProps = {
   children: React.ComponentType
@@ -7,8 +8,8 @@ type ShopContentProps = {
 export const ShopContent = () => {
   return (
     <div className="shop-content">
-      qqq
       <ShopNav />
+      <ShopBooks />
     </div>
   );
 };
