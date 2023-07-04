@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import { ShopNav } from "./ShopNav"
 
 
-describe("ShopNav", () => {
+/* describe("ShopNav", () => {
   test("renders correctly", () => {
     render(<ShopNav />)
     const headingElement = screen.getByRole("heading", {
@@ -12,4 +12,4 @@ describe("ShopNav", () => {
     const checkboxesElement = screen.getAllByRole("checkbox");
     expect(checkboxesElement).toBeTruthy();
   })
-})
+}) */

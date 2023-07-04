@@ -1,17 +1,11 @@
-import { ShopData } from "../../../ShopData"
+import { BookDataType } from "../../../ShopDataType";
 
 
-
-export const ShopBooks = () => {
-  const allBooks = ShopData.slice();
-
+export const ShopBooks = (props:{ bookList:BookDataType[] }) => {
   return (
     <div className="shop-books">
-      <div className="search-container">
-        <input type="search" placeholder="Search"/>
-      </div>
       <div className="books-display">
-        {allBooks.map(book => {
+        {props.bookList.map((book) => {
           return (
             <div className="book">
               <img
@@ -23,9 +17,9 @@ export const ShopBooks = () => {
               <h5>{book.title}</h5>
               <h4>${book.price}</h4>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};

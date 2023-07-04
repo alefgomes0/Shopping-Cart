@@ -1,14 +1,13 @@
-type BookData = {
-  title: string;
-  id: number;
-  url: string;
-  alt: string
-  genre: string[];
-  pages: number;
-  price: number;
-};
+import { BookDataType } from "./ShopDataType";
 
-export const ShopData: BookData[] = [
+export function filterBooks(books: BookDataType[], query: string) {
+  query = query.toLowerCase().trim();
+  return books.filter((book) =>
+    book.title.toLowerCase().includes(query)
+  );
+}
+
+export const ShopData: BookDataType[] = [
   {
     title: "A Song of Ice and Fire",
     id: 0,

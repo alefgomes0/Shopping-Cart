@@ -1,14 +1,14 @@
-import { ShopData } from "../../../ShopData";
+import { BookDataType } from "../../../ShopDataType";
 
 type genresProperties = {
   [index: string]: number;
 };
 
-export const ShopNav = () => {
+export const ShopNav = (props: { genreList: BookDataType[] }) => {
   const genres: genresProperties = {};
 
   const registryGenres = () => {
-    ShopData.forEach((book) => {
+    props.genreList.forEach((book) => {
       for (const genre of book.genre) {
         genre in genres ? (genres[genre] += 1) : (genres[genre] = 1);
       }
@@ -23,7 +23,7 @@ export const ShopNav = () => {
         {Object.keys(genres).map((genre: string) => {
           return (
             <div className="category" key={genre}>
-              <input type="checkbox" />
+              <input type="checkbox" name={genre} />
               <h5>{genre}</h5>
               <h6 className="genre-quantity">({genres[genre]})</h6>
             </div>
