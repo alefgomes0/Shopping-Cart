@@ -37,14 +37,14 @@ body {
   justify-content: center;
   justify-content: center;
   color: #fff;
-  background: rgb(44, 44, 44);
+  background: rgb(29, 29, 29);
   background: linear-gradient(
     270deg,
-    rgba(44, 44, 44, 1) 0%,
-    rgba(27, 27, 27, 1) 25%,
-    rgba(20, 20, 20, 1) 50%,
-    rgba(27, 27, 27, 1) 75%,
-    rgba(44, 44, 44, 1) 100%
+    rgba(29, 29, 29, 1) 0%,
+    rgba(18, 18, 18, 1) 25%,
+    rgba(11, 11, 11, 1) 50%,
+    rgba(18, 18, 18, 1) 75%,
+    rgba(29, 29, 29, 1) 100%
   );
   padding: 0 15px 0 17px;
   z-index: 10;
@@ -251,7 +251,6 @@ a > button {
   padding: 0;
 }
 
-
 .category > h5 {
   padding: 0 4px 0 3px;
   font-size: 1.1rem;
@@ -270,7 +269,6 @@ a > button {
   grid-row: 3 / 4;
 }
 
-
 .search {
   width: 50%;
   height: 30px;
@@ -283,7 +281,7 @@ a > button {
   padding-left: 10px;
 }
 
-.search:focus{
+.search:focus {
   outline: 2px solid #6197e3;
 }
 
@@ -303,6 +301,7 @@ a > button {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
+  max-height: 300px;
 }
 
 .book > * {

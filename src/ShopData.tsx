@@ -1,11 +1,5 @@
 import { BookDataType } from "./ShopDataType";
 
-export function filterBooks(books: BookDataType[], query: string) {
-  query = query.toLowerCase().trim();
-  return books.filter((book) =>
-    book.title.toLowerCase().includes(query)
-  );
-}
 
 export const ShopData: BookDataType[] = [
   {
@@ -15,7 +9,7 @@ export const ShopData: BookDataType[] = [
     alt: "A well worned shield with a dragon",
     genre: ["Fantasy"],
     pages: 600,
-    price: 30,
+    price: 30.11,
   },
   {
     title: "The Shining",
@@ -24,7 +18,7 @@ export const ShopData: BookDataType[] = [
     alt: "A wooden door",
     genre: ["Horror"],
     pages: 800,
-    price: 45,
+    price: 45.59,
   },
   {
     title: "The Hitchhikker's Guide to the Galaxy",
@@ -33,7 +27,7 @@ export const ShopData: BookDataType[] = [
     alt: "The galaxy with a playful green figure holding a suitcase at the center",
     genre: ["Sci-Fi"],
     pages: 732,
-    price: 51,
+    price: 51.42,
   },
   {
     title: "Dune",
@@ -42,7 +36,7 @@ export const ShopData: BookDataType[] = [
     alt: "A mysterious person in the middle of a sandstorm with a giant moon at his back",
     genre: ["Sci-Fi"],
     pages: 274,
-    price: 19,
+    price: 19.19,
   },
   {
     title: "1Q84",
@@ -51,7 +45,7 @@ export const ShopData: BookDataType[] = [
     alt: "A tree with two slightly different moons around",
     genre: ["Romance"],
     pages: 484,
-    price: 28,
+    price: 28.93,
   },
   {
     title: "Por um feminismo afro-latino-americano",
@@ -60,7 +54,7 @@ export const ShopData: BookDataType[] = [
     alt: "A black woman smiling",
     genre: ["Sociology"],
     pages: 331,
-    price: 30,
+    price: 30.61,
   },
   {
     title: "Interview with a Vampire",
@@ -69,7 +63,7 @@ export const ShopData: BookDataType[] = [
     alt: "Red candles on a dark background",
     genre: ["Horror"],
     pages: 293,
-    price: 16,
+    price: 16.07,
   },
   {
     title: "Flowers for Algernon",
@@ -78,7 +72,7 @@ export const ShopData: BookDataType[] = [
     alt: "A white rat",
     genre: ["Sci-Fi"],
     pages: 320,
-    price: 19,
+    price: 19.75
   },
   {
     title: "The Handmaid's Tale",
@@ -96,7 +90,7 @@ export const ShopData: BookDataType[] = [
     alt: "An old train with a lot of mist around it",
     genre: ["Crime"],
     pages: 256,
-    price: 11,
+    price: 11.82,
   },
   {
     title: "The Lord of the Rings",
@@ -105,6 +99,6 @@ export const ShopData: BookDataType[] = [
     alt: "A snowy mountain",
     genre: ["Fantasy"],
     pages: 1376,
-    price: 56,
+    price: 56.33,
   },
 ];

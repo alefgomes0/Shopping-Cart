@@ -1,10 +1,14 @@
+import { MouseEventHandler } from "react";
 import { BookDataType } from "../../../ShopDataType";
 
 type genresProperties = {
   [index: string]: number;
 };
 
-export const ShopNav = (props: { genreList: BookDataType[] }) => {
+export const ShopNav = (props: {
+  genreList: BookDataType[];
+  onClick: MouseEventHandler<HTMLInputElement>;
+}) => {
   const genres: genresProperties = {};
 
   const registryGenres = () => {
@@ -23,7 +27,7 @@ export const ShopNav = (props: { genreList: BookDataType[] }) => {
         {Object.keys(genres).map((genre: string) => {
           return (
             <div className="category" key={genre}>
-              <input type="checkbox" name={genre} />
+              <input type="checkbox" value={genre} onClick={props.onClick} />
               <h5>{genre}</h5>
               <h6 className="genre-quantity">({genres[genre]})</h6>
             </div>

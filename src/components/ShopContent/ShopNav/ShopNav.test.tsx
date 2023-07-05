@@ -1,10 +1,11 @@
 import { render, screen } from "@testing-library/react"
 import { ShopNav } from "./ShopNav"
+import { ShopData } from "../../../ShopData"
 
 
 /* describe("ShopNav", () => {
   test("renders correctly", () => {
-    render(<ShopNav />)
+    render(<ShopNav genreList={ShopData}/>)
     const headingElement = screen.getByRole("heading", {
       name: "Genres"
     })
