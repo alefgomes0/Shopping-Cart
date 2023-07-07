@@ -1,5 +1,5 @@
 import { ShopNav } from "./ShopNav/ShopNav";
-import { SearchBar } from "../SearchBar/SearchBar";
+import { SearchBar } from "./SearchBar/SearchBar";
 import { ShopBooks } from "./ShopBooks/ShopBooks";
 import { ShopData } from "../../ShopData";
 import { BookDataType } from "../../ShopDataType";

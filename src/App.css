@@ -31,7 +31,7 @@ body {
   display: grid;
   grid-row: 1 / 2;
   grid-template-rows: auto;
-  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -98,6 +98,7 @@ body {
   align-items: center;
   gap: 2rem;
   grid-column: -3 / -2;
+  margin-top: 10px;
 }
 
 .cart-container {
@@ -228,6 +229,7 @@ a > button {
   align-self: start;
   grid-template-rows: auto;
   gap: 10px;
+  padding-top: 20px;
 }
 
 .category {
@@ -259,25 +261,20 @@ a > button {
 
 .category > h6 {
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.4;
   text-align: center;
   padding-top: 1px;
 }
 
-.shop-books {
-  display: grid;
-  grid-row: 3 / 4;
-}
-
 .search {
-  width: 50%;
+  width: 44.5%;
   height: 30px;
   grid-row: 2 / 3;
   border-radius: 20px;
   background-color: #373737;
   border: none;
   color: #d6cfcf;
-  margin: 20px 0 0 20px;
+  margin: 40px 0 0 150px;
   padding-left: 10px;
 }
 
@@ -294,7 +291,15 @@ a > button {
   grid-template-rows: repeat(auto-fit, minmax(clamp(100px, 300px, 400px), 1fr));
   grid-row: -2 / -1;
   gap: 20px;
-  padding: 40px 0 0 20px;
+  padding: 40px 0 0 0;
+  margin-left: 150px;
+}
+
+.books-display > a,
+.books-display > a:visited,
+.books-display > a:hover {
+  color: #f3f3f3;
+  text-decoration: none;
 }
 
 .book {
@@ -302,6 +307,7 @@ a > button {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   max-height: 300px;
+  cursor: pointer;
 }
 
 .book > * {
@@ -309,9 +315,57 @@ a > button {
   padding: 0;
 }
 
+.book > h4 {
+  font-style: italic;
+}
+
 .book-cover {
   width: 180px;
   height: 230px;
+}
+
+.book-detail-container {
+  display: grid;
+  grid-template-rows: 120px 50px 1fr 50px;
+  height: 100svh;
+  background: rgb(44, 44, 44);
+  background: linear-gradient(
+    270deg,
+    rgba(44, 44, 44, 1) 0%,
+    rgba(27, 27, 27, 1) 25%,
+    rgba(20, 20, 20, 1) 50%,
+    rgba(27, 27, 27, 1) 75%,
+    rgba(44, 44, 44, 1) 100%
+  );
+  color: #f3f3f3;
+  padding: 0 19px 0 22px;
+}
+
+.book-detail {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: 3 / 4;
+  background: rgb(51, 51, 51);
+  background: linear-gradient(
+    270deg,
+    rgba(51, 51, 51, 1) 0%,
+    rgba(61, 61, 61, 1) 50%,
+    rgba(51, 51, 51, 1) 100%
+  );
+  padding: 5%;
+  border-radius: 4px;
+}
+
+.book-detail > img {
+  grid-column: 1 / 2;
+  height: 100%;
+}
+
+.book-detail > h3 {
+  grid-column: 2 / 3;
+  justify-self: center;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 1000px) {

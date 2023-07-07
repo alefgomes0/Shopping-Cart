@@ -11,6 +11,8 @@ export const SearchBar = ( props:SearchBarProps ) => {
       className="search"
       onChange={props.onChange}
       value={props.query}
+      aria-label="Search"
+      name="search_query"
     />
   );
 };
