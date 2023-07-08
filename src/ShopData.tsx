@@ -1,15 +1,18 @@
 import { BookDataType } from "./ShopDataType";
 
-
 export const ShopData: BookDataType[] = [
   {
     title: "A Song of Ice and Fire",
+    author: "George R. R. Martin",
+    synopsis:
+      "A Song of Ice and Fire is a series of epic fantasy novels by the American novelist and screenwriter George R. R. Martin. He began the first volume of the series, A Game of Thrones, in 1991, and it was published in 1996. A Song of Ice and Fire takes place on the fictional continents Westeros and Essos. The point of view of each chapter in the story is a limited perspective of a range of characters growing from nine in the first novel, to 31 characters by the fifth novel. Three main stories interweave: a dynastic war among several families for control of Westeros, the rising threat of the supernatural Others in northernmost Westeros, and the ambition of the deposed king's exiled daughter to assume the Iron Throne.",
     id: 0,
     url: "/images/book-covers/asoif.jpg",
     alt: "A well worned shield with a dragon",
     genre: ["Fantasy"],
     pages: 600,
     price: 30.11,
+    publisher: "teste"
   },
   {
     title: "The Shining",
@@ -72,7 +75,7 @@ export const ShopData: BookDataType[] = [
     alt: "A white rat",
     genre: ["Sci-Fi"],
     pages: 320,
-    price: 19.75
+    price: 19.75,
   },
   {
     title: "The Handmaid's Tale",
