@@ -66,8 +66,12 @@ export const BookDetails = () => {
             </div>
           </div>
         </div>
-        <div className="buttons-container">
-          <button>Buy Now</button>
+        <div className="buy-book">
+          <div className="price-button">
+            <h3>Price: <span>${currentBook.price}</span></h3>
+            <button>Add to Cart</button>
+          </div>
+          <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
         </div>
       </div>
     </div>
