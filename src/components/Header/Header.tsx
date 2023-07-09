@@ -90,11 +90,13 @@ export const Header = (props: HeaderProps) => {
                 />
               </svg>
               {isVisible && (
-                <ul className={`dropdown-menu ${isVisible ? "visible" : ""}`}>
-                  <li key="home">Home</li>
-                  <li key="menu">Menu</li>
-                  <li key="about">About</li>
-                </ul>
+                <div className={`dropdown-menu ${isVisible ? "visible" : ""}`}>
+                  <div className="menu-options">
+                    <h4>Shop</h4>
+                    <h4>About</h4>
+                    <h4>Contact</h4>
+                  </div>
+                </div>
               )}
             </div>
           </div>
@@ -102,8 +104,8 @@ export const Header = (props: HeaderProps) => {
           <div className="cart-container">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
+              width="32"
+              height="32"
               viewBox="0 0 512 512"
               role="img"
             >
