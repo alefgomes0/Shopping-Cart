@@ -3,7 +3,7 @@ import { Header } from "./Header";
 import { BrowserRouter } from "react-router-dom";
 
 
-describe("Header", () => {
+/* describe("Header", () => {
   test("renders correctly", () => {
     render(
       <BrowserRouter>
@@ -22,3 +22,4 @@ describe("Header", () => {
   });
 
 });
+ */

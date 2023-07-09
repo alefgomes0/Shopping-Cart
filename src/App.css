@@ -376,6 +376,8 @@ a > button {
 
 .synopsis > h6 {
   line-height: 1.5rem;
+  align-self: start;
+  padding-top: 30px;
 }
 
 .synopsis > * {
@@ -387,7 +389,7 @@ a > button {
   grid-column: 1 / 2;
   height: 100%;
   padding: 16px 0;
-  width: 350px;
+  width: 300px;
   height: 500px;
 }
 
@@ -466,7 +468,7 @@ a > button {
   gap: 15px;
 }
 
-.buy-book > div > button {
+.add-to-cart {
   width: 100%;
   height: 35px;
   cursor: pointer;
@@ -483,13 +485,170 @@ a > button {
   opacity: 0.65;
 }
 
-.buy-book > div > button:hover {
+.add-to-cart:hover {
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
   color: #fff;
 }
 
+.m-book-detail-container {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  height: 100svh;
+  background: rgb(44, 44, 44);
+  background: linear-gradient(
+    270deg,
+    rgba(44, 44, 44, 1) 0%,
+    rgba(27, 27, 27, 1) 25%,
+    rgba(20, 20, 20, 1) 50%,
+    rgba(27, 27, 27, 1) 75%,
+    rgba(44, 44, 44, 1) 100%
+  );
+  color: #f3f3f3;
+}
+
+.m-book-detail-container > * {
+  margin: 0;
+  padding: 0;
+}
+
+.m-book-detail > * {
+  margin: 0;
+  padding: 0;
+}
+
+.m-book-detail {
+  grid-row: -2 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: #f3f3f3;
+  padding: 0 15px 0 17px;
+}
+
+.m-title-author > * {
+  margin: 0;
+  padding: 0;
+}
+
+.m-title-author > h4 {
+  opacity: 0.7;
+}
+
+.m-header {
+  display: grid;
+  grid-row: 1 / 2;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 1fr auto;
+  color: #fff;
+  background: rgb(29, 29, 29);
+  background: linear-gradient(
+    270deg,
+    rgba(29, 29, 29, 1) 0%,
+    rgba(18, 18, 18, 1) 25%,
+    rgba(11, 11, 11, 1) 50%,
+    rgba(18, 18, 18, 1) 75%,
+    rgba(29, 29, 29, 1) 100%
+  );
+  padding: 0 15px 0 17px;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #bdbbbb;
+}
+
+.m-header > h1 {
+  justify-self: center;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.m-header > .cart-container {
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  align-self: center;
+}
+
+.dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  align-self: center;
+  justify-self: start;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  z-index: 11;
+  background: rgb(218, 218, 218);
+  background: linear-gradient(
+    180deg,
+    rgba(218, 218, 218, 1) 0%,
+    rgba(177, 177, 177, 1) 100%
+  );
+  width: 250px;
+  height: 200px;
+  margin: 0;
+  padding: 9px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
+  left: 0;
+}
+
+.dropdown-menu > li {
+  display: flex;
+  align-items: end;
+  align-content: end;
+  color: #1b1b1b;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.menu-title > svg {
+  margin: 0;
+  padding: 0;
+}
+
+
+.visible {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr auto 1fr;
+  gap: 9px;
+  justify-items: center;
+  animation: dropdown-expand 0.5s ease-in-out;
+  transform-origin: top;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1200px) {
+  .book-detail {
+    grid-template-columns: auto 1.5fr 1fr;
+    padding: 5%;
+  }
+
+  .title-author > h3 {
+    font-size: 1.7rem;
+  }
+
+  .synopsis > h6 {
+    line-height: 1.25rem;
+  }
+}
+
 @media (max-width: 1000px) {
+  /*   .book-detail > img {
+    width: 200px;
+    height: 320px;
+  } */
+
   .header > h1 {
     grid-column: 1 / 2;
   }
@@ -500,5 +659,64 @@ a > button {
 
   .cart-container {
     grid-column: -2 / -1;
+  }
+
+  .synopsis > h6 {
+    line-height: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .header-links {
+      gap: 10px;
+    }
+
+    .buy-book {
+      grid-template-rows: auto auto auto;
+    }
+
+    .book-detail {
+      position: relative;
+    }
+
+    .book-detail > img {
+      width: 200px;
+      height: 350px;
+    }
+
+    .other-info {
+      position: absolute;
+      left: 10%;
+      top: 50;
+      bottom: 100;
+      left: 0;
+    }
+
+    .buy-book {
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .other-info {
+      grid-column: -2 / -1;
+    }
+
+    .price-button {
+      align-self: center;
+      grid-row: -3 / -2;
+    }
+
+    .buy-book > h5 {
+      align-self: start;
+      grid-row: -2 / -1;
+    }
+  }
+}
+
+@keyframes dropdown-expand {
+  0% {
+    transform: scaleY(0) translateX(-50%);
+  }
+
+  100% {
+    transform: scaleY(1) translateX(-50%);
   }
 }
