@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 type HeaderProps = {
@@ -7,10 +7,21 @@ type HeaderProps = {
 
 export const Header = (props: HeaderProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  let dropdown = useRef<HTMLDivElement>(null);
 
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
+  useEffect(() => {
+    const closeDropdown = (e:MouseEvent) => {
+      if (isVisible && dropdown.current !== e.target) {
+        setIsVisible(false)
+      }
+    }
+
+    window.addEventListener("click", closeDropdown);
+
+    return () => {
+      window.removeEventListener("click", closeDropdown);
+    }
+  }, [isVisible])
 
   return (
     <>
@@ -75,7 +86,11 @@ export const Header = (props: HeaderProps) => {
       ) : (
         <div className="m-header">
           <div className="dropdown-container">
-            <div className="menu-title" onClick={toggleVisibility}>
+            <div
+              className="menu-title"
+              onClick={() => setIsVisible(!isVisible)}
+              ref={dropdown}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -97,10 +112,10 @@ export const Header = (props: HeaderProps) => {
                 className={`dropdown-menu ${isVisible ? "visible" : "hide"}`}
               >
                 <div className="menu-options">
-                  <NavLink to="/">Home</NavLink>
-                  <NavLink to="/shop">Shop</NavLink>
-                  <NavLink to="/about">About</NavLink>
-                  <NavLink to="/contact">Contact</NavLink>
+                  <NavLink to="/"><button type="button">Home</button></NavLink>
+                  <NavLink to="/shop"><button type="button">Shop</button></NavLink>
+                  <NavLink to="/about"><button type="button">About</button></NavLink>
+                  <NavLink to="/contact"><button type="button">Contact</button></NavLink>
                 </div>
               </div>
             </div>
@@ -117,9 +132,9 @@ export const Header = (props: HeaderProps) => {
                 <path d="M39 32H13L8 12h36l-5 20Z" />
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="4"
                   d="M3 6h3.5L8 12m0 0l5 20h26l5-20H8Z"
                 />
                 <circle
@@ -127,18 +142,18 @@ export const Header = (props: HeaderProps) => {
                   cy="39"
                   r="3"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="4"
                 />
                 <circle
                   cx="39"
                   cy="39"
                   r="3"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="4"
                 />
               </g>
             </svg>

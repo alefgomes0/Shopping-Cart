@@ -1,15 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { ShopData } from "../../../ShopData";
 
 type BookDetailsProps = {
-  isDesktop: boolean
-}
+  isDesktop: boolean;
+};
 
-export const BookDetails = (props:BookDetailsProps) => {
+export const BookDetails = (props: BookDetailsProps) => {
   const { bookId } = useParams();
   const currentBook = ShopData.filter((book) => book.id === Number(bookId))[0];
-
 
   return (
     <div>
@@ -76,7 +74,9 @@ export const BookDetails = (props:BookDetailsProps) => {
             </div>
             <div className="buy-book">
               <div className="price-button">
-                <h3>Price:<span>     ${currentBook.price}</span></h3>
+                <h3>
+                  Price:<span> ${currentBook.price}</span>
+                </h3>
                 <button className="add-to-cart">Add to Cart</button>
               </div>
               <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
@@ -104,8 +104,3 @@ export const BookDetails = (props:BookDetailsProps) => {
     </div>
   );
 };
-
-
-
-
-

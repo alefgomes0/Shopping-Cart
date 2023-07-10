@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEventHandler } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { NoMatch } from "./components/NoMatch/NoMatch";
@@ -12,6 +12,7 @@ import { BookDetails } from "./components/ShopContent/BookDetails/BookDetails";
 
 export const App = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 820);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +28,7 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-      <Header isDesktop={isDesktop}/>
+      <Header isDesktop={isDesktop} />
       <Routes>
         <Route path="/" element={<HomeContent />} />
         <Route path="shop" element={<ShopContent />} />
