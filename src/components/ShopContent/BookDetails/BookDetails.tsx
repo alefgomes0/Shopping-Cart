@@ -95,9 +95,16 @@ export const BookDetails = (props: BookDetailsProps) => {
               alt={currentBook.alt}
               className="m-book-cover"
             />
+            <h3 className="m-price">$  {currentBook.price}</h3>
             <h5>Estimated delivery time: </h5>
             <h5>Between XXXX-XX-XX and YYYY-YY-YY</h5>
-            <button className="add-to-cart">Add to cart</button>
+            <button className="add-to-cart">
+              Add to cart
+            </button>
+            <div className="m-book-synopsis">
+              <h3>Book details</h3>
+              <h4>{currentBook.synopsis}</h4>
+            </div>
           </div>
         </div>
       )}

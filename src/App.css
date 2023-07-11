@@ -505,10 +505,13 @@ a > button {
   color: #fff;
 }
 
+.m-book-detail > .add-to-cart {
+  margin: 20px 0;
+}
+
 .m-book-detail-container {
   display: grid;
   grid-template-rows: 80px 1fr;
-  height: 100svh;
   background: rgb(44, 44, 44);
   background: linear-gradient(
     270deg,
@@ -539,6 +542,10 @@ a > button {
   padding: 0 15px 0 17px;
 }
 
+.m-book-detail > h5:first-of-type {
+  padding-top: 20px;
+}
+
 .m-title-author {
   padding-top: 17px;
 }
@@ -550,6 +557,7 @@ a > button {
 
 .m-title-author > h4 {
   opacity: 0.7;
+  padding-bottom: 20px;
 }
 
 .m-header {
@@ -670,6 +678,25 @@ a > button {
 .hide {
   animation: dropdown-hide 0.2s ease-in-out;
   transform: translateX(-120%);
+}
+
+.m-book-detail > img {
+  height: 300px;
+  width: 200px;
+}
+
+.m-price {
+  font-size: 2rem;
+  padding-top: 20px;
+}
+
+.m-book-synopsis > h3 {
+  font-size: 2rem;
+}
+
+.m-book-synopsis > h4 {
+  opacity: 0.8;
+  line-height: 1.8rem;
 }
 
 @media (max-width: 1200px) {
