@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopData } from "../../../ShopData";
+import { Stepper } from "../../Stepper/Stepper";
+
 
 type BookDetailsProps = {
   isDesktop: boolean;
@@ -7,7 +10,23 @@ type BookDetailsProps = {
 
 export const BookDetails = (props: BookDetailsProps) => {
   const { bookId } = useParams();
-  const currentBook = ShopData.filter((book) => book.id === Number(bookId))[0];
+  let currentBook = ShopData.filter((book) => book.id === Number(bookId))[0];
+
+  const [book, setBook] = useState(currentBook);
+
+  const handleIncrement = () => {
+    setBook({
+      ...book,
+      quantity: Number(book.quantity) + 1
+    })
+  };
+
+  const handleDecrement = () => {
+    setBook({
+      ...book,
+      quantity: Number(book.quantity) - 1
+    })
+  };
 
   return (
     <div>
@@ -95,15 +114,21 @@ export const BookDetails = (props: BookDetailsProps) => {
               alt={currentBook.alt}
               className="m-book-cover"
             />
-            <h3 className="m-price">$  {currentBook.price}</h3>
+            <h3 className="m-price">$ {currentBook.price}</h3>
+            <Stepper
+              quantity={book.quantity}
+              increment={handleIncrement}
+              decrement={handleDecrement}
+            />
             <h5>Estimated delivery time: </h5>
             <h5>Between XXXX-XX-XX and YYYY-YY-YY</h5>
-            <button className="add-to-cart">
-              Add to cart
-            </button>
+            <button className="add-to-cart">Add to cart</button>
             <div className="m-book-synopsis">
               <h3>Book details</h3>
               <h4>{currentBook.synopsis}</h4>
+              <h4>Number of Pages:     {currentBook.pages}</h4>
+              <h4>Genres: {currentBook.genre}</h4>
+              <h4>Published by: {currentBook.publisher}</h4>
             </div>
           </div>
         </div>

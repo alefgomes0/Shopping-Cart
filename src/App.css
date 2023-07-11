@@ -560,6 +560,38 @@ a > button {
   padding-bottom: 20px;
 }
 
+.stepper {
+  display: flex;
+}
+
+.stepper > * {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+.stepper > button:first-of-type {
+  background-color: #888787;
+  border: 1px solid #bdbbbb;
+  font-size: 18px;
+  color: #f9f9f9;
+}
+
+.stepper > button:last-of-type {
+  background-color: #64b97f;
+  border: 1px solid #373737;
+  font-size: 18px;
+  color: #181818;
+}
+
+.stepper > input {
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #181818;
+}
+
 .m-header {
   display: grid;
   grid-row: 1 / 2;
