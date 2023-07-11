@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 type HeaderProps = {
   isDesktop: boolean;
@@ -23,18 +23,22 @@ export const Header = (props: HeaderProps) => {
     }
   }, [isVisible])
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       {props.isDesktop ? (
         <div className="header">
-          <NavLink to="/">
+          <NavLink to="/" onClick={scrollToTop}>
             <h1>BookStore</h1>
           </NavLink>
           <div className="header-links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/shop">Shop</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/" onClick={scrollToTop}>Home</NavLink>
+            <NavLink to="/shop" onClick={scrollToTop}>Shop</NavLink>
+            <NavLink to="/about" onClick={scrollToTop}>About</NavLink>
+            <NavLink to="/contact" onClick={scrollToTop}>Contact</NavLink>
           </div>
           <div className="cart-container">
             <svg
@@ -112,15 +116,15 @@ export const Header = (props: HeaderProps) => {
                 className={`dropdown-menu ${isVisible ? "visible" : "hide"}`}
               >
                 <div className="menu-options">
-                  <NavLink to="/"><button type="button">Home</button></NavLink>
-                  <NavLink to="/shop"><button type="button">Shop</button></NavLink>
-                  <NavLink to="/about"><button type="button">About</button></NavLink>
-                  <NavLink to="/contact"><button type="button">Contact</button></NavLink>
+                  <NavLink to="/" onClick={scrollToTop}><button type="button">Home</button></NavLink>
+                  <NavLink to="/shop" onClick={scrollToTop}><button type="button">Shop</button></NavLink>
+                  <NavLink to="/about" onClick={scrollToTop}><button type="button">About</button></NavLink>
+                  <NavLink to="/contact" onClick={scrollToTop}><button type="button">Contact</button></NavLink>
                 </div>
               </div>
             </div>
           </div>
-          <h1>BookStore</h1>
+          <Link to="/" onClick={scrollToTop}><h1>BookStore</h1></Link>
           <div className="cart-container">
             <svg
               xmlns="http://www.w3.org/2000/svg"

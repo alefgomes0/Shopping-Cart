@@ -199,12 +199,17 @@ a > button {
   font-size: 1.5rem;
   margin: 0;
   padding: 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+a > button:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3) inset;
 }
 
 .shop-content {
   display: grid;
   grid-template-rows: 120px auto 1fr;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: auto 8fr;
   height: 100svh;
   overflow: auto;
   background: rgb(44, 44, 44);
@@ -225,6 +230,7 @@ a > button {
   align-self: start;
   grid-row: 1 / -1;
   border-right: 2px solid #737373;
+  padding-right: 17px;
 }
 
 .shop-nav > .books-category > h3 {
@@ -286,9 +292,9 @@ a > button {
   height: 30px;
   grid-row: 2 / 3;
   border-radius: 20px;
-  background-color: #373737;
+  background-color: #3c3c3c;
   border: none;
-  color: #d6cfcf;
+  color: #f9f9f9;
   margin: 40px 0 0 150px;
   padding-left: 10px;
 }
@@ -323,6 +329,13 @@ a > button {
   grid-template-rows: auto auto auto;
   max-height: 300px;
   cursor: pointer;
+  width: min-content;
+  height: min-content;
+}
+
+.book > a {
+  width: min-content;
+  height: min-content;
 }
 
 .book > * {
@@ -332,6 +345,11 @@ a > button {
 
 .book > h4 {
   font-style: italic;
+  font-size: 1rem;
+}
+
+.book > h5 {
+  font-size: 1rem;
 }
 
 .book-cover {
@@ -615,9 +633,16 @@ a > button {
   border-bottom: 1px solid #bdbbbb;
 }
 
-.m-header > h1 {
-  justify-self: center;
+.m-header > a > h1 {
+  color: #fff;
   font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.m-header > a {
+  text-decoration: none;
+  justify-self: center;
   margin: 0;
   padding: 0;
 }
@@ -673,12 +698,11 @@ a > button {
 }
 
 .menu-options > a > button {
-  background-color: unset;
   cursor: pointer;
   width: 100%;
-  display: block;
-  background: unset;
+  background: transparent;
   border: none;
+  box-shadow: none;
 }
 
 .menu-options > a > button {
@@ -756,6 +780,16 @@ a > button {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+  .books-display {
+    grid-template-columns: repeat( auto-fit, minmax(clamp(50px, 200px, 400px), 1fr) );
+    grid-template-rows: repeat(auto-fit, minmax(clamp(100px, 200px, 400px), 1fr));
+    margin-left: 40px;
+  }
+
+  .search {
+    margin-left: 40px;
+  }
+
   .header-links {
     grid-column: 3 / 4;
   }
@@ -768,46 +802,88 @@ a > button {
     line-height: 1.1rem;
     font-size: 0.7rem;
   }
+}
 
-  @media (max-width: 900px) {
-    .buy-book {
-      grid-template-rows: auto auto auto;
-    }
+@media (max-width: 900px) {
+  .buy-book {
+    grid-template-rows: auto auto auto;
+  }
 
-    .book-detail {
-      position: relative;
-    }
+  .book-detail {
+    position: relative;
+  }
 
-    .book-detail > img {
-      width: 200px;
-      height: 350px;
-    }
+  .book-detail > img {
+    width: 200px;
+    height: 350px;
+  }
 
-    .other-info {
-      position: absolute;
-      left: 10%;
-      top: 50;
-      bottom: 100;
-      left: 0;
-    }
+  .other-info {
+    position: absolute;
+    left: 10%;
+    top: 50;
+    bottom: 100;
+    left: 0;
+  }
 
-    .buy-book {
-      grid-template-rows: 1fr 1fr 1fr;
-    }
+  .buy-book {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 
-    .other-info {
-      grid-column: -2 / -1;
-    }
+  .other-info {
+    grid-column: -2 / -1;
+  }
 
-    .price-button {
-      align-self: center;
-      grid-row: -3 / -2;
-    }
+  .price-button {
+    align-self: center;
+    grid-row: -3 / -2;
+  }
 
-    .buy-book > h5 {
-      align-self: start;
-      grid-row: -2 / -1;
-    }
+  .buy-book > h5 {
+    align-self: start;
+    grid-row: -2 / -1;
+  }
+
+  .shop-nav {
+    padding-right: 17px;
+  }
+
+  .search {
+    width: 78%;
+  }
+}
+
+@media(max-width: 650px) {
+  .shop-nav > .books-category > h3 {
+    font-size: 1.9rem;
+  }
+
+  .category > input {
+    width: 11px;
+    height: 11px;
+  }
+
+  .category > h5 {
+    font-size: 1rem;
+  }
+
+  .category > h6 {
+    font-size: 0.8rem;
+  }
+
+  .search {
+    margin-left: 17px;
+    justify-self: center;
+  }
+
+  .books-display {
+    margin-left: 17px;
+    justify-items: center;
+  }
+
+  .book > img {
+    width: 120px;
+    height: 170px;
   }
 }
 
