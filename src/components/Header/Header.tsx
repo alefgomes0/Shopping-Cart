@@ -27,11 +27,12 @@ export const Header = (props: HeaderProps) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+
   return (
     <>
       {props.isDesktop ? (
         <div className="header">
-          <NavLink to="/" onClick={scrollToTop}>
+          <NavLink to="/">
             <h1>BookStore</h1>
           </NavLink>
           <div className="header-links">

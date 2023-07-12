@@ -108,6 +108,7 @@ body {
 }
 
 .cart-container {
+  position: relative;
   display: flex;
   justify-self: end;
   background-color: #4f4848;
@@ -418,7 +419,7 @@ a > button:hover {
 .book-detail > img {
   grid-column: 1 / 2;
   height: 100%;
-  padding: 16px 0;
+  padding: 12px 0 23px 0;
   width: 300px;
   height: 500px;
 }
@@ -456,8 +457,8 @@ a > button:hover {
 .number-of-pages,
 .idiom,
 .publisher {
-  align-self: end;
   display: flex;
+  align-self: end;
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -595,6 +596,7 @@ a > button:hover {
   border: 1px solid #bdbbbb;
   font-size: 18px;
   color: #f9f9f9;
+  cursor: pointer;
 }
 
 .stepper > button:last-of-type {
@@ -602,6 +604,7 @@ a > button:hover {
   border: 1px solid #373737;
   font-size: 18px;
   color: #181818;
+  cursor: pointer;
 }
 
 .stepper > input {

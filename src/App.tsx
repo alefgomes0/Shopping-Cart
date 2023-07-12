@@ -1,4 +1,4 @@
-import { useState, useEffect, MouseEventHandler } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { NoMatch } from "./components/NoMatch/NoMatch";

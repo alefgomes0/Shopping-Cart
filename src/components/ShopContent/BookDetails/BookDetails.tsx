@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { ShopData } from "../../../ShopData";
 import { Stepper } from "../../Stepper/Stepper";
 
-
 type BookDetailsProps = {
   isDesktop: boolean;
 };
@@ -17,15 +16,16 @@ export const BookDetails = (props: BookDetailsProps) => {
   const handleIncrement = () => {
     setBook({
       ...book,
-      quantity: Number(book.quantity) + 1
-    })
+      quantity: Number(book.quantity) + 1,
+    });
   };
 
   const handleDecrement = () => {
+    if (Number(book.quantity) - 1 <= 0) return;
     setBook({
       ...book,
-      quantity: Number(book.quantity) - 1
-    })
+      quantity: Number(book.quantity) - 1,
+    });
   };
 
   return (
@@ -96,7 +96,14 @@ export const BookDetails = (props: BookDetailsProps) => {
                 <h3>
                   Price:<span> ${currentBook.price}</span>
                 </h3>
-                <button className="add-to-cart">Add to Cart</button>
+                <Stepper
+                  quantity={book.quantity}
+                  increment={handleIncrement}
+                  decrement={handleDecrement}
+                />
+                <button className="add-to-cart">
+                  Add to Cart
+                </button>
               </div>
               <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
             </div>
@@ -122,11 +129,13 @@ export const BookDetails = (props: BookDetailsProps) => {
             />
             <h5>Estimated delivery time: </h5>
             <h5>Between XXXX-XX-XX and YYYY-YY-YY</h5>
-            <button className="add-to-cart">Add to cart</button>
+            <button className="add-to-cart">
+              Add to cart
+            </button>
             <div className="m-book-synopsis">
               <h3>Book details</h3>
               <h4>{currentBook.synopsis}</h4>
-              <h4>Number of Pages:     {currentBook.pages}</h4>
+              <h4>Number of Pages: {currentBook.pages}</h4>
               <h4>Genres: {currentBook.genre}</h4>
               <h4>Published by: {currentBook.publisher}</h4>
             </div>
