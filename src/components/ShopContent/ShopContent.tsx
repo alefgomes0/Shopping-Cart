@@ -49,8 +49,10 @@ export const ShopContent = () => {
   return (
     <div className="shop-content">
       <ShopNav genreList={ShopData} onClick={handleClick} />
-      <SearchBar query={query} onChange={handleChange} />
-      <ShopBooks bookList={searchResult} />
+      <div className="teste">
+        <SearchBar query={query} onChange={handleChange} />
+        <ShopBooks bookList={searchResult} />
+      </div>
     </div>
   );
 };
