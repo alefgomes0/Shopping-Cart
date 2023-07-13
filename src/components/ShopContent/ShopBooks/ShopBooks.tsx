@@ -1,4 +1,4 @@
-import { BookDataType } from "../../../ShopDataType";
+import { BookDataType } from "../../../data/ShopDataType";
 import { Link } from "react-router-dom";
 
 export const ShopBooks = (props: { bookList: BookDataType[] }) => {

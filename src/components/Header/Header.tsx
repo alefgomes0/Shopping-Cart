@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useShoppingCart } from "../context/CartContext";
+
+
+
 
 type HeaderProps = {
   isDesktop: boolean;
@@ -8,6 +12,9 @@ type HeaderProps = {
 export const Header = (props: HeaderProps) => {
   const [isVisible, setIsVisible] = useState(false);
   let dropdown = useRef<HTMLDivElement>(null);
+
+  const { openCart, closeCart, cartQuantity } = useShoppingCart();
+
 
   useEffect(() => {
     const closeDropdown = (e:MouseEvent) => {
@@ -41,7 +48,8 @@ export const Header = (props: HeaderProps) => {
             <NavLink to="/about" onClick={scrollToTop}>About</NavLink>
             <NavLink to="/contact" onClick={scrollToTop}>Contact</NavLink>
           </div>
-          <div className="cart-container">
+          <div className="cart-container" onClick={() => console.log(cartQuantity)}>
+            <div className="cart-quantity">{cartQuantity}</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

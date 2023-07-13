@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { BookDataType } from "../../../ShopDataType";
+import { BookDataType } from "../../../data/ShopDataType";
 
 type genresProperties = {
   [index: string]: number;

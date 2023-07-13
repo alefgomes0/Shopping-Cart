@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import { ShopNav } from "./ShopNav"
-import { ShopData } from "../../../ShopData"
+import { ShopData } from "../../../data/ShopData"
 
 
 /* describe("ShopNav", () => {

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { ShopData } from "../../../ShopData";
+import { ShopData } from "../../../data/ShopData";
 import { Stepper } from "../../Stepper/Stepper";
+import { useShoppingCart } from "../../context/CartContext";
 
 type BookDetailsProps = {
   isDesktop: boolean;
@@ -10,23 +11,15 @@ type BookDetailsProps = {
 export const BookDetails = (props: BookDetailsProps) => {
   const { bookId } = useParams();
   let currentBook = ShopData.filter((book) => book.id === Number(bookId))[0];
-
   const [book, setBook] = useState(currentBook);
+  const {
+    getBookQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingCart();
 
-  const handleIncrement = () => {
-    setBook({
-      ...book,
-      quantity: Number(book.quantity) + 1,
-    });
-  };
-
-  const handleDecrement = () => {
-    if (Number(book.quantity) - 1 <= 0) return;
-    setBook({
-      ...book,
-      quantity: Number(book.quantity) - 1,
-    });
-  };
+  const quantity: number = getBookQuantity(currentBook.id);
 
   return (
     <div>
@@ -96,14 +89,31 @@ export const BookDetails = (props: BookDetailsProps) => {
                 <h3>
                   Price:<span> ${currentBook.price}</span>
                 </h3>
-                <Stepper
-                  quantity={book.quantity}
-                  increment={handleIncrement}
-                  decrement={handleDecrement}
-                />
-                <button className="add-to-cart">
-                  Add to Cart
-                </button>
+                {quantity === 0 ? (
+                  <button
+                    className="add-to-cart"
+                    onClick={() => increaseCartQuantity(currentBook.id)}
+                  >
+                    Add to Cart
+                  </button>
+                ) : (
+                  <div className="cart-manage">
+                    <div className="stepper">
+                      <button
+                        onClick={() => decreaseCartQuantity(currentBook.id)}
+                      >
+                        -
+                      </button>
+                      <div>{quantity}</div>
+                      <button
+                        onClick={() => increaseCartQuantity(currentBook.id)}
+                      >
+                        +
+                      </button>
+                    </div>
+                    <button className="remove" onClick={() => removeFromCart(currentBook.id)}>Remove</button>
+                  </div>
+                )}
               </div>
               <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
             </div>
@@ -122,16 +132,30 @@ export const BookDetails = (props: BookDetailsProps) => {
               className="m-book-cover"
             />
             <h3 className="m-price">$ {currentBook.price}</h3>
-            <Stepper
-              quantity={book.quantity}
-              increment={handleIncrement}
-              decrement={handleDecrement}
-            />
+
             <h5>Estimated delivery time: </h5>
             <h5>Between XXXX-XX-XX and YYYY-YY-YY</h5>
-            <button className="add-to-cart">
-              Add to cart
-            </button>
+            {quantity === 0 ? (
+              <button
+                className="add-to-cart"
+                onClick={() => increaseCartQuantity(currentBook.id)}
+              >
+                Add to Cart
+              </button>
+            ) : (
+              <div className="cart-manage">
+                <div className="stepper">
+                  <button onClick={() => decreaseCartQuantity(currentBook.id)}>
+                    -
+                  </button>
+                  <div>{quantity}</div>
+                  <button onClick={() => increaseCartQuantity(currentBook.id)}>
+                    +
+                  </button>
+                </div>
+                <button className="remove" onClick={() => removeFromCart(currentBook.id)}>Remove</button>
+              </div>
+            )}
             <div className="m-book-synopsis">
               <h3>Book details</h3>
               <h4>{currentBook.synopsis}</h4>

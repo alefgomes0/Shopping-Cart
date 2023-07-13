@@ -8,6 +8,7 @@ import { AboutContent } from "./components/AboutContent/AboutContent";
 import { ContactContent } from "./components/ContactContent/ContactContent";
 import "./App.css";
 import { BookDetails } from "./components/ShopContent/BookDetails/BookDetails";
+import { ShoppingCartProvider } from "./components/context/CartContext";
 
 
 export const App = () => {
@@ -27,17 +28,22 @@ export const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Header isDesktop={isDesktop} />
-      <Routes>
-        <Route path="/" element={<HomeContent />} />
-        <Route path="shop" element={<ShopContent />} />
-        <Route path="shop/:bookId" element={<BookDetails isDesktop={isDesktop}/>} />
-        <Route path="about" element={<AboutContent />} />
-        <Route path="contact" element={<ContactContent />} />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
-    </BrowserRouter>
+    <ShoppingCartProvider>
+
+      <BrowserRouter>
+        <Header isDesktop={isDesktop} />
+        <Routes>
+          <Route path="/" element={<HomeContent />} />
+          <Route path="shop" element={<ShopContent />} />
+          <Route path="shop/:bookId" element={<BookDetails isDesktop={isDesktop}/>} />
+          <Route path="about" element={<AboutContent />} />
+          <Route path="contact" element={<ContactContent />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+      </BrowserRouter>      
+    </ShoppingCartProvider>
+
+
   );
 };
 

@@ -1,8 +1,8 @@
 import { ShopNav } from "./ShopNav/ShopNav";
 import { SearchBar } from "./SearchBar/SearchBar";
 import { ShopBooks } from "./ShopBooks/ShopBooks";
-import { ShopData } from "../../ShopData";
-import { BookDataType } from "../../ShopDataType";
+import { ShopData } from "../../data/ShopData";
+import { BookDataType } from "../../data/ShopDataType";
 import { useState } from "react";
 
 export const ShopContent = () => {

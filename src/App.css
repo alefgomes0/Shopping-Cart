@@ -122,6 +122,18 @@ body {
   padding: 0;
 }
 
+.cart-quantity {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  background-color: #e82b2b;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  text-align: center;
+  transform: translate(20%, -20%);
+}
+
 .home-content {
   width: 100%;
   height: 100%;
@@ -579,8 +591,23 @@ a > button:hover {
   padding-bottom: 20px;
 }
 
+.cart-manage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  gap: 6px;
+  align-self: start;
+}
+
+.cart-manage > *:hover,
+.cart-manage > .stepper:hover {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12) inset;
+}
+
 .stepper {
   display: flex;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .stepper > * {
@@ -589,6 +616,7 @@ a > button:hover {
   border-radius: 2px;
   margin: 0;
   padding: 0;
+
 }
 
 .stepper > button:first-of-type {
@@ -607,10 +635,26 @@ a > button:hover {
   cursor: pointer;
 }
 
-.stepper > input {
+.stepper > div {
   text-align: center;
   font-size: 18px;
   border: 1px solid #181818;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove {
+  width: 100px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: #df2c2f;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .m-header {
