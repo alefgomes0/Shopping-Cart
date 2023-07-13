@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopData } from "../../../data/ShopData";
-import { Stepper } from "../../Stepper/Stepper";
 import { useShoppingCart } from "../../context/CartContext";
 
 type BookDetailsProps = {

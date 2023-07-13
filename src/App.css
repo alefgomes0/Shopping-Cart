@@ -139,30 +139,58 @@ body {
   transform: translate(20%, -25%);
 }
 
-.cart-items {
+div > .cart-items {
   position: absolute;
   right: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   transform: translateY(55%);
-  width: 25vw;
+  width: 50vw;
   height: 90svh;
-  background-color: #fff;
+  background-color: #ececec;
   pointer-events: none;
+  color: #131313;
+  opacity: 0.8;
+  padding: 25px;
+}
+
+.cart-items > * {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-items > h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.item-on-cart {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+}
+
+.item-on-cart > img {
+  height: 96px;
+  width: 60px;
+  grid-column: 1 / 2;
 }
 
 div > .not-show {
-  transform: translate(100%, 55%);
-  animation: hide-cart 0.2s ease-in-out;
+  transform: translate(120%, 10%);
+  animation: hide-cart 0.5s ease-in-out;
 }
 
 div > .show {
-  transform: translate(20%, 55%);
-  animation: show-cart 0.2s ease-in-out
+  transform: translate(5%, 10%);
+  animation: show-cart 0.5s ease-in-out;
 }
 
 .home-content {
   width: 100%;
   height: 100%;
-  
 }
 
 .image-container {
@@ -247,7 +275,7 @@ a > button:hover {
 
 .shop-content {
   display: grid;
-  grid-template-rows: 120px  1fr;
+  grid-template-rows: 120px 1fr;
   grid-template-columns: auto 8fr;
   height: 100svh;
   overflow: auto;
@@ -659,7 +687,7 @@ a > button:hover {
 .stepper > button:first-of-type {
   background-color: #131313;
   font-size: 18px;
-  color: #f9f9f9;
+  color: #eeeeee;
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
@@ -668,7 +696,7 @@ a > button:hover {
 .stepper > button:last-of-type {
   background-color: #131313;
   font-size: 18px;
-  color: #f9f9f9;
+  color: #eeeeee;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
@@ -700,7 +728,7 @@ a > button:hover {
   height: 30px;
   border-radius: 4px;
   background-color: #e82b2b;
-  color: #fff;
+  color: #eeeeee;
   cursor: pointer;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
   justify-self: start;
@@ -814,7 +842,7 @@ a > button:hover {
   font-weight: 600;
   text-decoration: none;
   width: 100%;
-  text-align:left;
+  text-align: left;
 }
 
 .menu-title > svg {
@@ -884,8 +912,14 @@ a > button:hover {
   }
 
   .books-display {
-    grid-template-columns: repeat( auto-fit, minmax(clamp(50px, 200px, 400px), 1fr) );
-    grid-template-rows: repeat(auto-fit, minmax(clamp(100px, 200px, 400px), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(clamp(50px, 200px, 400px), 1fr)
+    );
+    grid-template-rows: repeat(
+      auto-fit,
+      minmax(clamp(100px, 200px, 400px), 1fr)
+    );
     margin-left: 40px;
   }
 
@@ -910,6 +944,10 @@ a > button:hover {
 @media (max-width: 900px) {
   .buy-book {
     grid-template-rows: auto auto auto;
+  }
+
+  .teste {
+    padding: 50px 0 0 50px;
   }
 
   .book-detail {
@@ -956,9 +994,61 @@ a > button:hover {
   }
 }
 
-@media(max-width: 650px) {
+@media (max-width: 820px) {
+  .cart-items {
+    width: 50vw;
+  }
+
+  div > .show {
+    transform: translate(8%, 55%);
+    animation: m-show-cart 0.5s ease-in-out;
+  }
+
+  div > .not-show {
+    transform: translate(120%, 55%);
+    animation: m-hide-cart 0.5s ease-in-out;
+  }
+
+  @keyframes m-show-cart {
+    from {
+      transform: translate(120%, 55%);
+    }
+
+    to {
+      transform: translate(8%, 55%);
+    }
+  }
+
+  @keyframes m-hide-cart {
+    from {
+      transform: translate(8%, 55%);
+    }
+
+    to {
+      transform: translate(120%, 55%);
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .cart-items {
+    width: 75vw;
+  }
+
   .shop-nav > .books-category > h3 {
     font-size: 1.9rem;
+  }
+
+  .teste {
+    padding: 50px 0 0 20px;
+  }
+
+  .books-display > * {
+    justify-self: start;
+  }
+
+  .category {
+    padding: 0 20px 0 20px;
   }
 
   .category > input {
@@ -1010,22 +1100,22 @@ a > button:hover {
   }
 }
 
-@keyframes show-cart{
+@keyframes show-cart {
   0% {
-    transform: translate(100%, 55%);
+    transform: translate(120%, 10%);
   }
 
   100% {
-    transform: translate(20%, 55%);
+    transform: translate(5%, 10%);
   }
 }
 
 @keyframes hide-cart {
   0% {
-    transform: translate(20%, 55%);
+    transform: translate(5%, 10%);
   }
 
   100% {
-    transform: translate(100%, 55%);
+    transform: translate(120%, 10%);
   }
 }

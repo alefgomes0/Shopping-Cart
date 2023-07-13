@@ -94,27 +94,3 @@ export const ShoppingCartProvider = ({
   );
 };
 
-/* type CartContextType = {
-  cart: BookDataType[];
-  setCart: (updatedCart: BookDataType[]) => void;
-};
-
-export const CartContext = createContext<CartContextType>({
-  cart: [],
-  setCart: () => {},
-});
-
-export const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cart, setCart] = useState<BookDataType[]>([]);
-
-  const handleSetCart = (updatedCart: BookDataType[]) => {
-    setCart(updatedCart);
-  };
-
-  const contextValue: CartContextType = {
-    cart,
-    setCart: handleSetCart,
-  };
-
-  return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
-}; */
