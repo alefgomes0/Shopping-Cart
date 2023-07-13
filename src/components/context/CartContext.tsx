@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from "react";
-import { BookDataType } from "../../data/ShopDataType";
 
 type ShoppingCartProviderProps = {
   children: React.ReactNode;
@@ -11,8 +10,8 @@ type CartItem = {
 };
 
 type ShoppingCartContextValues = {
-  openCart: () => void;
-  closeCart: () => void;
+  showCart: boolean
+  displayCart: () => void;
   getBookQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
@@ -30,15 +29,14 @@ export const useShoppingCart = () => {
 export const ShoppingCartProvider = ({
   children,
 }: ShoppingCartProviderProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
   );
-  const openCart = () => setIsOpen(true);
-  const closeCart = () => setIsOpen(false);
+  const displayCart = () => setShowCart(!showCart)
 
   const getBookQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -87,8 +85,8 @@ export const ShoppingCartProvider = ({
         removeFromCart,
         cartItems,
         cartQuantity,
-        openCart,
-        closeCart
+        showCart,
+        displayCart
       }}
     >
       {children}

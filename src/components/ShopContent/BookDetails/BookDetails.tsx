@@ -143,7 +143,7 @@ export const BookDetails = (props: BookDetailsProps) => {
                 Add to Cart
               </button>
             ) : (
-              <div className="cart-manage">
+              <div className="cart-manage m-cart-manage">
                 <div className="stepper">
                   <button onClick={() => decreaseCartQuantity(currentBook.id)}>
                     -

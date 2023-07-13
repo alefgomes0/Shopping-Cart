@@ -13,7 +13,7 @@ export const Header = (props: HeaderProps) => {
   const [isVisible, setIsVisible] = useState(false);
   let dropdown = useRef<HTMLDivElement>(null);
 
-  const { openCart, closeCart, cartQuantity } = useShoppingCart();
+  const { showCart, displayCart, cartQuantity } = useShoppingCart();
 
 
   useEffect(() => {
@@ -48,8 +48,9 @@ export const Header = (props: HeaderProps) => {
             <NavLink to="/about" onClick={scrollToTop}>About</NavLink>
             <NavLink to="/contact" onClick={scrollToTop}>Contact</NavLink>
           </div>
-          <div className="cart-container" onClick={() => console.log(cartQuantity)}>
+          <div className="cart-container" onClick={() => displayCart()}>
             <div className="cart-quantity">{cartQuantity}</div>
+            
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -95,6 +96,7 @@ export const Header = (props: HeaderProps) => {
               />
             </svg>
           </div>
+          <div className={`cart-items ${showCart ? "show" : "not-show"}`}></div>
         </div>
       ) : (
         <div className="m-header">
@@ -134,7 +136,8 @@ export const Header = (props: HeaderProps) => {
             </div>
           </div>
           <Link to="/" onClick={scrollToTop}><h1>BookStore</h1></Link>
-          <div className="cart-container">
+          <div className="cart-container" onClick={() => displayCart()}>
+            <div className="cart-quantity">{cartQuantity}</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
