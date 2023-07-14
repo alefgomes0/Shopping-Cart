@@ -14,6 +14,7 @@
   font-style: normal;
 }
 
+
 @font-face {
   font-family: 'Edensor';
   src: url('./assets/fonts/edensor-free-webfont.woff2') format('woff2'),
@@ -30,7 +31,7 @@
 
 body {
   grid-template-rows: 120px 1fr;
-  font-family: "Jaldi";
+  font-family: "Jaldi", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -75,7 +76,7 @@ body {
   margin: 0;
   color: #fff;
   letter-spacing: 0.07rem;
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
 .header > div > * {
@@ -126,6 +127,7 @@ body {
   padding: 15px 15px;
   border-radius: 50%;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .cart-container > svg {
@@ -274,7 +276,7 @@ div > .cart-items {
 }
 
 .cart-stepper > div {
-  background-color: #8e8e8e;
+  background-color: #cdcccc;
   text-align: center;
 }
 
@@ -877,7 +879,9 @@ a > button:hover {
   border-bottom: 1px solid #bdbbbb;
 }
 
+
 .m-header > a > h1 {
+  font-family: "Edensor";
   color: #fff;
   font-size: 3rem;
   margin: 0;
@@ -887,8 +891,9 @@ a > button:hover {
 .m-header > a {
   text-decoration: none;
   justify-self: center;
+  align-self: center;
   margin: 0;
-  padding: 0;
+  padding: 15px 0 0 0;
 }
 
 .m-header > .cart-container {
@@ -1054,6 +1059,10 @@ a > button:hover {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+  .header > a > h1 {
+    font-size: 3.5rem;
+  }
+
   .books-display {
     grid-template-columns: repeat(
       auto-fit,
@@ -1081,6 +1090,10 @@ a > button:hover {
   .synopsis > h6 {
     line-height: 1.1rem;
     font-size: 0.7rem;
+  }
+
+  div > .idk > h3 {
+    font-size: 1.5rem;
   }
 }
 
@@ -1174,6 +1187,26 @@ a > button:hover {
 }
 
 @media (max-width: 650px) {
+  .m-header > a > h1 {
+    font-size: 2rem;
+  }
+
+  .dropdown-container > .menu-title > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .m-header > .cart-container {
+    width: 45px;
+    height: 45px;
+  }
+
+  .m-header > .cart-container > svg {
+    width: 20px;
+    height: 20px;
+  }
+
+
   div > .cart-items {
     width: 75vw;
   }

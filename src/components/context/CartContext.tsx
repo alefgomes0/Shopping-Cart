@@ -36,7 +36,10 @@ export const ShoppingCartProvider = ({
     (quantity, item) => item.quantity + quantity,
     0
   );
-  const displayCart = () => setShowCart(!showCart)
+
+  const displayCart = () => {
+    setShowCart(!showCart)
+  }
 
   const getBookQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;

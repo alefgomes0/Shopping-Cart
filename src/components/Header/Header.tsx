@@ -97,7 +97,7 @@ export const Header = (props: HeaderProps) => {
             </div>
           </div>
           <Link to="/" onClick={scrollToTop}>
-            <h1>BookStore</h1>
+            <h1>BOOKSTORE</h1>
           </Link>
           <ShopCart />
         </div>

@@ -13,19 +13,18 @@ export const ShopCart = () => {
   } = useShoppingCart();
   const [isHovered, setIsHovered] = useState(false);
   const cartContainer = useRef<HTMLDivElement>(null);
-  const buttonStepper = useRef<HTMLButtonElement>(null);
+  const vsf1 = useRef<HTMLButtonElement>(null);
+  const vsf2 = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const closeCart = (e: MouseEvent) => {
-      if (showCart && cartContainer.current !== e.target) {
-        displayCart();
-      }
+    const handleClickOutsideCart = (e: MouseEvent) => {
+      if (showCart && !cartContainer.current?.contains(e.target as Node)) displayCart();
     };
 
-    window.addEventListener("click", closeCart);
+    window.addEventListener("click", handleClickOutsideCart);
 
     return () => {
-      window.removeEventListener("click", closeCart);
+      window.removeEventListener("click", handleClickOutsideCart);
     };
   });
 
@@ -40,7 +39,9 @@ export const ShopCart = () => {
   return (
     <div
       className="cart-container"
-      onClick={() => displayCart()}
+      onClick={(e) => {
+        if (e.target === cartContainer.current) displayCart();
+      }}
       ref={cartContainer}
     >
       <div className="cart-quantity">{cartQuantity}</div>
@@ -109,7 +110,7 @@ export const ShopCart = () => {
           const currentBook = ShopData.find((book) => book.id === item.id);
           if (currentBook === undefined) return -1;
           return (
-            <div className="item-on-cart">
+            <div className="item-on-cart" key={item.id}>
               <img
                 src={process.env.PUBLIC_URL + currentBook.url}
                 alt={currentBook.alt}
@@ -121,14 +122,14 @@ export const ShopCart = () => {
               <div className="cart-stepper">
                 <button
                   onClick={() => decreaseCartQuantity(item.id)}
-                  ref={buttonStepper}
+                  ref={vsf1}
                 >
                   -
                 </button>
                 <div>{item.quantity}</div>
                 <button
                   onClick={() => increaseCartQuantity(item.id)}
-                  ref={buttonStepper}
+                  ref={vsf2}
                 >
                   +
                 </button>
