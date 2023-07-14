@@ -33,7 +33,7 @@ export const Header = (props: HeaderProps) => {
       {props.isDesktop ? (
         <div className="header">
           <NavLink to="/">
-            <h1>BookStore</h1>
+            <h1>BOOKSTORE</h1>
           </NavLink>
           <div className="header-links">
             <NavLink to="/" onClick={scrollToTop}>

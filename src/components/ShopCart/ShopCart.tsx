@@ -3,9 +3,17 @@ import { useShoppingCart } from "../context/CartContext";
 import { ShopData } from "../../data/ShopData";
 
 export const ShopCart = () => {
-  const { cartItems, showCart, displayCart, cartQuantity } = useShoppingCart();
+  const {
+    cartItems,
+    showCart,
+    displayCart,
+    cartQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+  } = useShoppingCart();
   const [isHovered, setIsHovered] = useState(false);
   const cartContainer = useRef<HTMLDivElement>(null);
+  const buttonStepper = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const closeCart = (e: MouseEvent) => {
@@ -88,7 +96,10 @@ export const ShopCart = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              Finish Order<span className={isHovered ? "hovered" : "not-hovered"}>&#x27A4;</span>
+              Finish Order
+              <span className={isHovered ? "hovered" : "not-hovered"}>
+                &#x27A4;
+              </span>
             </button>
           ) : (
             <></>
@@ -106,6 +117,21 @@ export const ShopCart = () => {
               <div className="title-price">
                 <h4>{currentBook.title}</h4>
                 <h6>$ {item.quantity * currentBook.price}</h6>
+              </div>
+              <div className="cart-stepper">
+                <button
+                  onClick={() => decreaseCartQuantity(item.id)}
+                  ref={buttonStepper}
+                >
+                  -
+                </button>
+                <div>{item.quantity}</div>
+                <button
+                  onClick={() => increaseCartQuantity(item.id)}
+                  ref={buttonStepper}
+                >
+                  +
+                </button>
               </div>
             </div>
           );
