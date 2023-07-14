@@ -49,7 +49,7 @@ export const ShopContent = () => {
   return (
     <div className="shop-content">
       <ShopNav genreList={ShopData} onClick={handleClick} />
-      <div className="teste">
+      <div className="main-content">
         <SearchBar query={query} onChange={handleChange} />
         <ShopBooks bookList={searchResult} />
       </div>

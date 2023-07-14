@@ -144,14 +144,13 @@ div > .cart-items {
   right: 0;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto auto;
   transform: translateY(55%);
   width: 50vw;
   height: 90svh;
   background-color: #ececec;
-  pointer-events: none;
   color: #131313;
-  opacity: 0.8;
+  opacity: 0.9;
   padding: 25px;
 }
 
@@ -160,9 +159,68 @@ div > .cart-items {
   padding: 0;
 }
 
-.cart-items > h3 {
-  font-size: 2rem;
+.cart-items > div > h3 {
+  font-size: 2.1rem;
   margin: 0;
+}
+
+.idk {
+  display: grid;
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  width: 100%;
+  height: min-content;
+  padding-bottom: 20px;
+}
+
+.idk > * {
+  margin: 0;
+  padding: 0;
+}
+
+.idk > button {
+  display: flex;
+  gap: 10px;
+  width: 150px;
+  height: 27px;
+  justify-self: end;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #f9f9f9;
+  background-color: #1b1b1b;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.idk > button:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3) inset;
+}
+
+.idk > button > span {
+  color: #175eec;
+  font-size: 15px;
+  transform: translateY(-3%);
+  padding: 0;
+  margin: 0;
+}
+
+.idk > button > span.hovered {
+  transform: translate(50%, -3%) scale(1.2);
+  animation: button-arrow 0.3s ease-in-out;
+}
+
+.idk > button > span.not-hovered {
+  transform: translate(0%, -3%) scale(1);
+  animation: arrow-button 0.3s ease-in-out;
 }
 
 .item-on-cart {
@@ -173,9 +231,22 @@ div > .cart-items {
 }
 
 .item-on-cart > img {
-  height: 96px;
-  width: 60px;
+  height: 160px;
+  width: 100px;
   grid-column: 1 / 2;
+  padding-top: 7px;
+}
+
+.title-price {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.title-price > * {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
 
 div > .not-show {
@@ -184,7 +255,7 @@ div > .not-show {
 }
 
 div > .show {
-  transform: translate(5%, 10%);
+  transform: translate(2%, 10%);
   animation: show-cart 0.5s ease-in-out;
 }
 
@@ -358,7 +429,7 @@ a > button:hover {
   padding-top: 1px;
 }
 
-.teste {
+.main-content {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   padding: 50px 0 0 100px;
@@ -369,7 +440,7 @@ a > button:hover {
   height: 30px;
   grid-row: 2 / 3;
   border-radius: 20px;
-  background-color: #3c3c3c;
+  background-color: #4c4c4c;
   border: none;
   color: #f9f9f9;
   padding: 0 10px 0 10px;
@@ -946,7 +1017,7 @@ a > button:hover {
     grid-template-rows: auto auto auto;
   }
 
-  .teste {
+  .main-content {
     padding: 50px 0 0 50px;
   }
 
@@ -1039,7 +1110,7 @@ a > button:hover {
     font-size: 1.9rem;
   }
 
-  .teste {
+  .main-content {
     padding: 50px 0 0 20px;
   }
 
@@ -1106,16 +1177,36 @@ a > button:hover {
   }
 
   100% {
-    transform: translate(5%, 10%);
+    transform: translate(2%, 10%);
   }
 }
 
 @keyframes hide-cart {
   0% {
-    transform: translate(5%, 10%);
+    transform: translate(2%, 10%);
   }
 
   100% {
     transform: translate(120%, 10%);
+  }
+}
+
+@keyframes button-arrow {
+  0% {
+    transform: translateX(-3%);
+  }
+
+  100% {
+    transform: translate(50%, -3%) scale(1.2);
+  }
+}
+
+@keyframes arrow-button {
+  0% {
+    transform: translate(50%, -3%) scale(1.2);
+  }
+
+  100% {
+    transform: translateX(-3%);
   }
 }
