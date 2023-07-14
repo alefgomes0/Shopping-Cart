@@ -13,12 +13,12 @@ export const ShopCart = () => {
   } = useShoppingCart();
   const [isHovered, setIsHovered] = useState(false);
   const cartContainer = useRef<HTMLDivElement>(null);
-  const vsf1 = useRef<HTMLButtonElement>(null);
-  const vsf2 = useRef<HTMLButtonElement>(null);
+  let total: number = 0;
 
   useEffect(() => {
     const handleClickOutsideCart = (e: MouseEvent) => {
-      if (showCart && !cartContainer.current?.contains(e.target as Node)) displayCart();
+      if (showCart && !cartContainer.current?.contains(e.target as Node))
+        displayCart();
     };
 
     window.addEventListener("click", handleClickOutsideCart);
@@ -90,22 +90,7 @@ export const ShopCart = () => {
         />
       </svg>
       <div className={`cart-items ${showCart ? "show" : "not-show"}`}>
-        <div className="idk">
-          <h3>{cartQuantity ? "Your items" : "Your cart is empty"}</h3>
-          {cartQuantity ? (
-            <button
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Finish Order
-              <span className={isHovered ? "hovered" : "not-hovered"}>
-                &#x27A4;
-              </span>
-            </button>
-          ) : (
-            <></>
-          )}
-        </div>
+        <h3>{cartQuantity ? "Your items" : "Your cart is empty"}</h3>
         {cartItems.map((item) => {
           const currentBook = ShopData.find((book) => book.id === item.id);
           if (currentBook === undefined) return -1;
@@ -118,25 +103,36 @@ export const ShopCart = () => {
               <div className="title-price">
                 <h4>{currentBook.title}</h4>
                 <h6>$ {item.quantity * currentBook.price}</h6>
+                {<p style={{display: "none"}}>{total += item.quantity * currentBook.price}</p>}
               </div>
               <div className="cart-stepper">
-                <button
-                  onClick={() => decreaseCartQuantity(item.id)}
-                  ref={vsf1}
-                >
-                  -
-                </button>
+                <button onClick={() => decreaseCartQuantity(item.id)}>-</button>
                 <div>{item.quantity}</div>
-                <button
-                  onClick={() => increaseCartQuantity(item.id)}
-                  ref={vsf2}
-                >
-                  +
-                </button>
+                <button onClick={() => increaseCartQuantity(item.id)}>+</button>
               </div>
             </div>
           );
         })}
+        <hr />
+        {cartQuantity ? (
+          <h4 className="total">{`Total: $${total}`}</h4>
+        ) : (
+          <></>
+        )}
+        {cartQuantity ? (
+          <button
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="finish-order"
+          >
+            Finish Order
+            <span className={isHovered ? "hovered" : "not-hovered"}>
+              &#x27A4;
+            </span>
+          </button>
+          ) : (
+          <></>
+        )}
       </div>
     </div>
   );

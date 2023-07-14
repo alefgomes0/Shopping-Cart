@@ -154,9 +154,7 @@ body {
 div > .cart-items {
   position: absolute;
   right: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(min-content, min-content));
+  display: -ms-inline-grid;
   transform: translateY(55%);
   width: 33vw;
   height: 90svh;
@@ -173,38 +171,23 @@ div > .cart-items {
   padding: 0;
 }
 
-.cart-items > div > h3 {
+.cart-items > h3 {
   font-size: 2.1rem;
   margin: 0;
+  padding-bottom: 20px;
 }
 
-.idk {
-  display: grid;
-  grid-row: 1 / 2;
-  grid-column: 1 / -1;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-  width: 100%;
-  height: min-content;
-}
-
-.idk > * {
-  margin: 0;
-  padding: 0;
-}
-
-.idk > button {
+.finish-order {
   display: flex;
   gap: 10px;
-  width: 150px;
-  height: 27px;
+  width: 100%;
+  height: 35px;
   justify-self: end;
   text-align: center;
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   margin: 0;
   border-radius: 4px;
@@ -214,24 +197,24 @@ div > .cart-items {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-.idk > button:hover {
+.finish-order:hover {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3) inset;
 }
 
-.idk > button > span {
+.finish-order > span {
   color: #175eec;
-  font-size: 15px;
+  font-size: 18px;
   transform: translateY(-3%);
   padding: 0;
   margin: 0;
 }
 
-.idk > button > span.hovered {
+.finish-order > span.hovered {
   transform: translate(50%, -3%) scale(1.2);
   animation: button-arrow 0.3s ease-in-out;
 }
 
-.idk > button > span.not-hovered {
+.finish-order > span.not-hovered {
   transform: translate(0%, -3%) scale(1);
   animation: arrow-button 0.3s ease-in-out;
 }
@@ -241,6 +224,7 @@ div > .cart-items {
   grid-template-columns: auto 1fr auto;
   grid-template-rows: min-content;
   gap: 15px;
+  padding-bottom: 25px;
 }
 
 .item-on-cart > img {
@@ -300,6 +284,12 @@ div > .not-show {
 div > .show {
   transform: translate(3%, 10%);
   animation: show-cart 0.4s ease-in-out;
+}
+
+.total {
+  padding: 20px 0 20px 0;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .home-content {

@@ -10,7 +10,6 @@ type BookDetailsProps = {
 export const BookDetails = (props: BookDetailsProps) => {
   const { bookId } = useParams();
   let currentBook = ShopData.filter((book) => book.id === Number(bookId))[0];
-  const [book, setBook] = useState(currentBook);
   const {
     getBookQuantity,
     increaseCartQuantity,
