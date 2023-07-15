@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useShoppingCart } from "../context/CartContext";
 import { ShopData } from "../../data/ShopData";
+import { Link } from "react-router-dom";
+
 
 export const ShopCart = () => {
   const {
@@ -90,7 +92,7 @@ export const ShopCart = () => {
         />
       </svg>
       <div className={`cart-items ${showCart ? "show" : "not-show"}`}>
-        <h3>{cartQuantity ? "Your items" : "Your cart is empty"}</h3>
+        <h3>{cartQuantity ? "My items" : "The cart is empty"}</h3>
         {cartItems.map((item) => {
           const currentBook = ShopData.find((book) => book.id === item.id);
           if (currentBook === undefined) return -1;
@@ -103,7 +105,11 @@ export const ShopCart = () => {
               <div className="title-price">
                 <h4>{currentBook.title}</h4>
                 <h6>$ {item.quantity * currentBook.price}</h6>
-                {<p style={{display: "none"}}>{total += item.quantity * currentBook.price}</p>}
+                {
+                  <p style={{ display: "none" }}>
+                    {(total += item.quantity * currentBook.price)}
+                  </p>
+                }
               </div>
               <div className="cart-stepper">
                 <button onClick={() => decreaseCartQuantity(item.id)}>-</button>
@@ -115,22 +121,23 @@ export const ShopCart = () => {
         })}
         <hr />
         {cartQuantity ? (
-          <h4 className="total">{`Total: $${total}`}</h4>
+          <>
+            <h4 className="total">{`Total: $${total}`}</h4>
+            <Link to="order-finish">
+              <button
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="finish-order"
+                onClick={() => displayCart()}
+              >
+                Finish Order
+                <span className={isHovered ? "hovered" : "not-hovered"}>
+                  &#x27A4;
+                </span>
+              </button>
+            </Link>
+          </>
         ) : (
-          <></>
-        )}
-        {cartQuantity ? (
-          <button
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className="finish-order"
-          >
-            Finish Order
-            <span className={isHovered ? "hovered" : "not-hovered"}>
-              &#x27A4;
-            </span>
-          </button>
-          ) : (
           <></>
         )}
       </div>

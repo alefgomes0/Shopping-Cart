@@ -14,11 +14,10 @@
   font-style: normal;
 }
 
-
 @font-face {
-  font-family: 'Edensor';
-  src: url('./assets/fonts/edensor-free-webfont.woff2') format('woff2'),
-       url('./assets/fonts/edensor-free-webfont.woff') format('woff');
+  font-family: "Edensor";
+  src: url("./assets/fonts/edensor-free-webfont.woff2") format("woff2"),
+    url("./assets/fonts/edensor-free-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +30,7 @@
 
 body {
   grid-template-rows: 120px 1fr;
-  font-family: "Jaldi", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Jaldi", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -177,7 +176,17 @@ div > .cart-items {
   padding-bottom: 20px;
 }
 
-.finish-order {
+.cart-items > a {
+  text-decoration: none;
+}
+
+.cart-items > a > button {
+  color: unset;
+  background: unset;
+  background-color: unset;
+}
+
+.cart-items > a > .finish-order {
   display: flex;
   gap: 10px;
   width: 100%;
@@ -186,7 +195,6 @@ div > .cart-items {
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
   font-size: 18px;
   text-align: center;
   margin: 0;
@@ -869,7 +877,6 @@ a > button:hover {
   border-bottom: 1px solid #bdbbbb;
 }
 
-
 .m-header > a > h1 {
   font-family: "Edensor";
   color: #fff;
@@ -974,6 +981,123 @@ a > button:hover {
 .hide {
   animation: dropdown-hide 0.2s ease-in-out;
   transform: translateX(-120%);
+}
+
+.order-finish {
+  display: grid;
+  grid-template-rows: 120px 1fr;
+  grid-template-columns: 8fr 4fr;
+  height: 100svh;
+  overflow: auto;
+  background: rgb(44, 44, 44);
+  background: linear-gradient(
+    270deg,
+    rgba(44, 44, 44, 1) 0%,
+    rgba(27, 27, 27, 1) 25%,
+    rgba(20, 20, 20, 1) 50%,
+    rgba(27, 27, 27, 1) 75%,
+    rgba(44, 44, 44, 1) 100%
+  );
+  color: #f3f3f3;
+  padding: 0 15px 0 17px;
+  gap: 50px;
+}
+
+.cart-full-view {
+  display: -ms-inline-grid;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border: 1px solid #ffc600;
+  width: 100%;
+  height: 50%;
+  background: rgb(65, 65, 65);
+  background: linear-gradient(
+    90deg,
+    rgba(65, 65, 65, 1) 0%,
+    rgba(55, 55, 55, 1) 50%,
+    rgba(65, 65, 65, 1) 100%
+  );
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  padding: 17px;
+}
+
+.cart-full-view > h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.purchase-summary {
+  display: -ms-inline-grid;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  background: rgb(65, 65, 65);
+  background: linear-gradient(
+    90deg,
+    rgba(65, 65, 65, 1) 0%,
+    rgba(55, 55, 55, 1) 50%,
+    rgba(65, 65, 65, 1) 100%
+  );
+  height: 50%;
+  padding: 17px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.purchase-summary > h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.purchase-summary-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.purchase-summary-items > * {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.purchase-summary-items > h4 {
+  font-size: 1.2rem;
+}
+
+.purchase-summary-items > h4 > span {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.purchase-summary-items.order-total > h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.purchase-summary-items.order-total > h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.purchase-summary > button {
+  width: 100%;
+  height: 35px;
+  border-radius: 6px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #1862f4;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.purchase-summary > button:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2) inset;
 }
 
 .m-book-detail > img {
@@ -1195,7 +1319,6 @@ a > button:hover {
     width: 20px;
     height: 20px;
   }
-
 
   div > .cart-items {
     width: 75vw;
