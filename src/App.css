@@ -150,11 +150,10 @@ body {
   transform: translate(20%, -25%);
 }
 
-div > .cart-items {
+div > div > .cart-items {
   position: absolute;
   right: 0;
-  display: -ms-inline-grid;
-  transform: translateY(55%);
+  transform: translate(2.7%, 5%);
   width: 33vw;
   height: 90svh;
   background-color: #ececec;
@@ -284,7 +283,7 @@ div > .cart-items {
   font-size: 1rem;
 }
 
-div > .not-show {
+div > div > .not-show {
   transform: translate(120%, 10%);
   animation: hide-cart 0.4s ease-in-out;
 }
@@ -295,9 +294,9 @@ div > .show {
 }
 
 .total {
-  padding: 20px 0 20px 0;
   font-size: 1.5rem;
   margin: 0;
+  padding: 15px 0;
 }
 
 .home-content {
@@ -486,6 +485,10 @@ a > button:hover {
   color: #f9f9f9;
   padding: 0 10px 0 10px;
   margin: 0 0 50px 0;
+}
+
+.search::placeholder {
+  color: #f9f9f9;
 }
 
 .search:focus {
@@ -702,6 +705,7 @@ a > button:hover {
     rgba(25, 73, 132, 1) 50%,
     rgba(14, 67, 131, 1) 100%
   );
+  border: 1px solid #313131;
   color: #f9f9f9;
   font-size: 1.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -805,6 +809,7 @@ a > button:hover {
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
 .stepper > button:last-of-type {
@@ -814,6 +819,7 @@ a > button:hover {
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
 .stepper > div {
@@ -848,6 +854,7 @@ a > button:hover {
   justify-self: start;
   font-size: 0.9rem;
   font-weight: 500;
+  border: none;
 }
 
 .remove:hover {
@@ -1007,7 +1014,6 @@ a > button:hover {
   display: -ms-inline-grid;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  border: 1px solid #ffc600;
   width: 100%;
   height: 50%;
   background: rgb(65, 65, 65);
@@ -1019,6 +1025,7 @@ a > button:hover {
   );
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   padding: 17px;
+  border-radius: 8px;
 }
 
 .cart-full-view > h2 {
@@ -1030,19 +1037,21 @@ a > button:hover {
 }
 
 .purchase-summary {
-  display: -ms-inline-grid;
+  display: inline-grid;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
-  background: rgb(65, 65, 65);
+  grid-template-columns: 1fr;
+  background: rgb(34, 50, 57);
   background: linear-gradient(
     90deg,
-    rgba(65, 65, 65, 1) 0%,
-    rgba(55, 55, 55, 1) 50%,
-    rgba(65, 65, 65, 1) 100%
+    rgba(34, 50, 57, 1) 0%,
+    rgba(32, 48, 55, 1) 50%,
+    rgba(34, 50, 57, 1) 100%
   );
   height: 50%;
   padding: 17px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
 }
 
 .purchase-summary > h3 {
@@ -1088,16 +1097,22 @@ a > button:hover {
   height: 35px;
   border-radius: 6px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
+  padding: 0;
+  margin-top: 20px;
   cursor: pointer;
   background-color: #1862f4;
   color: #fff;
   font-size: 1.3rem;
   font-weight: 500;
+  border: 1px solid #2e2e2e;
 }
 
 .purchase-summary > button:hover {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2) inset;
+}
+
+.purchase-summary > hr {
+  opacity: 0.2;
 }
 
 .m-book-detail > img {
@@ -1391,21 +1406,21 @@ a > button:hover {
 
 @keyframes show-cart {
   0% {
-    transform: translate(120%, 10%);
+    transform: translate(120%, 5%);
   }
 
   100% {
-    transform: translate(3.1%, 10%);
+    transform: translate(2.7%, 5%);
   }
 }
 
 @keyframes hide-cart {
   0% {
-    transform: translate(3.1%, 10%);
+    transform: translate(2.7%, 5%);
   }
 
   100% {
-    transform: translate(120%, 10%);
+    transform: translate(120%, 5%);
   }
 }
 

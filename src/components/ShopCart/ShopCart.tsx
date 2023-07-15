@@ -104,10 +104,10 @@ export const ShopCart = () => {
               />
               <div className="title-price">
                 <h4>{currentBook.title}</h4>
-                <h6>$ {item.quantity * currentBook.price}</h6>
+                <h6>$ {(item.quantity * currentBook.price) * 100 / 100}</h6>
                 {
                   <p style={{ display: "none" }}>
-                    {(total += item.quantity * currentBook.price)}
+                    {(total += (item.quantity * currentBook.price) * 100 / 100)}
                   </p>
                 }
               </div>
@@ -122,7 +122,7 @@ export const ShopCart = () => {
         <hr />
         {cartQuantity ? (
           <>
-            <h4 className="total">{`Total: $${total}`}</h4>
+            <h4 className="total">{`Total: $${total * 100 / 100}`}</h4>
             <Link to="order-finish">
               <button
                 onMouseEnter={handleMouseEnter}
