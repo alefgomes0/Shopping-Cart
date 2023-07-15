@@ -1030,10 +1030,59 @@ a > button:hover {
 
 .cart-full-view > h2 {
   margin: 0;
-  padding: 0;
+  padding: 0 0 20px 0;
   font-size: 2.3rem;
   font-weight: 500;
   color: #fff;
+}
+
+.order-finish-item {
+  display: grid;
+  align-items: start;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto 1fr auto auto auto;
+  padding: 0 0 20px 0;
+  gap: 50px;
+}
+
+.order-finish-item > img {
+  width: 60px;
+  height: 96px;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+.order-finish-name > * {
+  margin: 0;
+  padding: 0;
+  align-self: start;
+}
+
+.order-finish-name > h5 {
+  opacity: 0.8;
+}
+
+.order-finish-item > svg {
+  cursor: pointer;
+}
+
+.cart-stepper.fs > div {
+  color: #000000;
+  background-color: #eeeeee;
+}
+
+.fs-price {
+  align-self: start;
+
+}
+
+.fs-price > h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  color: #eeeeee;
+  text-align: start;
 }
 
 .purchase-summary {
@@ -1071,6 +1120,12 @@ a > button:hover {
   margin: 0;
   padding: 0;
   font-weight: 400;
+}
+
+.testando {
+  background-color: #cfcfcf;
+  height: 1px;
+  opacity: 0.2;
 }
 
 .purchase-summary-items > h4 {
