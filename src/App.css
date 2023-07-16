@@ -1096,6 +1096,9 @@ a > button:hover {
 }
 
 .cart-stepper.fs > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #000000;
   background-color: #eeeeee;
 }
@@ -1303,6 +1306,10 @@ a > button:hover {
   div > .idk > h3 {
     font-size: 1.5rem;
   }
+
+  .order-finish {
+    gap: 17px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1355,6 +1362,23 @@ a > button:hover {
 
   .search {
     width: 78%;
+  }
+
+  .order-finish {
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 1fr 1fr;
+  }
+
+  .order-finish-item {
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+  }
+
+  .purchase-summary {
+    grid-row: -2 / -1;
+    grid-column: 1 / -1;
+    height: auto;
+    margin-bottom: 17px;
   }
 }
 
@@ -1460,6 +1484,47 @@ a > button:hover {
   .book > img {
     width: 120px;
     height: 170px;
+  }
+
+  .cart-full-view > h2 {
+    font-size: 1.5rem;
+  }
+
+  .order-finish-item {
+    grid-template-columns: auto 80px auto auto auto;
+    gap: 17px;
+  }
+
+  .order-finish-item > img {
+    width: 40px;
+    height: 100%;
+  }
+
+  .order-finish-name > h4 {
+    font-size: 0.7rem;
+  }
+
+  .order-finish-name > h5 {
+    font-size: 0.6rem;
+  }
+
+  .cart-stepper.fs > button,
+  .cart-stepper.fs > div {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cart-stepper.fs > div {
+    font-size: 0.8rem;
+  }
+
+  .order-finish-item > h5 {
+    font-size: 0.7rem;
+  }
+
+  .order-finish-item > svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
