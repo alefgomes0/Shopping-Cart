@@ -548,6 +548,7 @@ a > button:hover {
 .book-cover {
   width: 180px;
   height: 230px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .book-detail-container {
@@ -611,9 +612,10 @@ a > button:hover {
 .book-detail > img {
   grid-column: 1 / 2;
   height: 100%;
-  padding: 12px 0 23px 0;
+  padding: 12px 0 0 0;
   width: 300px;
-  height: 500px;
+  height: 100%;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 .title-author {
@@ -625,27 +627,31 @@ a > button:hover {
   font-size: 2rem;
   font-family: "Edensor";
   padding-top: 15px;
+  letter-spacing: 0.1rem;
 }
 
 .title-author > h5 {
   font-style: italic;
+  opacity: 0.8;
 }
 
 .title-author > * {
   margin: 0;
   padding: 0;
+  line-height: 1;
 }
 
 .other-info {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 16px;
 }
 
 .other-info > *,
 .other-info > div > * {
   margin: 0;
   padding: 0;
+  gap: 10px;
+  line-height: 1;
 }
 
 .number-of-pages,
@@ -691,6 +697,10 @@ a > button:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.price-button > h5 {
+  opacity: 0.8;
 }
 
 .add-to-cart {
@@ -1011,11 +1021,12 @@ a > button:hover {
 }
 
 .cart-full-view {
-  display: -ms-inline-grid;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   width: 100%;
-  height: 50%;
   background: rgb(65, 65, 65);
   background: linear-gradient(
     90deg,
@@ -1025,7 +1036,18 @@ a > button:hover {
   );
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   padding: 17px;
+  margin-bottom: 17px;
   border-radius: 8px;
+}
+
+.q {
+  align-self: start;
+  margin: 0;
+  padding: 0;
+  text-align: start;
+  font-size: 1.3rem;
+  vertical-align: top;
+  line-height: 1;
 }
 
 .cart-full-view > h2 {
@@ -1051,12 +1073,18 @@ a > button:hover {
   margin: 0;
   padding: 0;
   object-fit: cover;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 .order-finish-name > * {
   margin: 0;
   padding: 0;
   align-self: start;
+  line-height: 1;
+}
+
+.order-finish-name > h4 {
+  padding-bottom: 17px;
 }
 
 .order-finish-name > h5 {
@@ -1072,17 +1100,12 @@ a > button:hover {
   background-color: #eeeeee;
 }
 
-.fs-price {
-  align-self: start;
-
-}
 
 .fs-price > h5 {
   margin: 0;
   padding: 0;
   font-size: 1.3rem;
   color: #eeeeee;
-  text-align: start;
 }
 
 .purchase-summary {
@@ -1182,10 +1205,11 @@ a > button:hover {
 
 .m-book-synopsis > h3 {
   font-size: 2rem;
+  font-weight: 600;
 }
 
 .m-book-synopsis > h4 {
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1.8rem;
 }
 

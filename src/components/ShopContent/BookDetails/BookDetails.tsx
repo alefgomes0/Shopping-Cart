@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopData } from "../../../data/ShopData";
 import { useShoppingCart } from "../../context/CartContext";
@@ -87,6 +86,7 @@ export const BookDetails = (props: BookDetailsProps) => {
                 <h3>
                   Price:<span> ${currentBook.price}</span>
                 </h3>
+                <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
                 {quantity === 0 ? (
                   <button
                     className="add-to-cart"
@@ -113,7 +113,6 @@ export const BookDetails = (props: BookDetailsProps) => {
                   </div>
                 )}
               </div>
-              <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
             </div>
           </div>
         </div>

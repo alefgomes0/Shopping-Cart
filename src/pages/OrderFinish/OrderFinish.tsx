@@ -32,10 +32,8 @@ export const OrderFinish = () => {
                 <div>{item.quantity}</div>
                 <button onClick={() => increaseCartQuantity(item.id)}>+</button>
               </div>
-              <div className="fs-price">
-                <h5>$ {item.quantity * currentBook.price * 100 / 100}</h5>
-                <p style={{ display: "none" }}>{total += item.quantity * currentBook.price * 100 / 100}</p>
-              </div>
+              <h5 className="q">$ {item.quantity * currentBook.price * 100 / 100}</h5>
+              <p style={{ display: "none" }}>{total += item.quantity * currentBook.price * 100 / 100}</p>
               <svg
                 onClick={() => removeFromCart(item.id)}
                 xmlns="http://www.w3.org/2000/svg"
