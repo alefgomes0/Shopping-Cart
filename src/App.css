@@ -139,6 +139,9 @@ body {
 }
 
 .cart-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   color: #fff;
@@ -148,17 +151,18 @@ body {
   border-radius: 50%;
   text-align: center;
   transform: translate(20%, -25%);
+  margin: 0;
+  padding: 0;
 }
 
 div > div > .cart-items {
   position: absolute;
   right: 0;
-  transform: translate(2.7%, 5%);
-  width: 33vw;
+  transform: translate(3%, 5%);
+  width: 500px;
   height: 90svh;
   background-color: #ececec;
   color: #131313;
-  opacity: 0.9;
   padding: 25px 16px;
   overflow: auto;
   gap: 16px;
@@ -169,11 +173,24 @@ div > div > .cart-items {
   padding: 0;
 }
 
-.cart-items > h3 {
+.fb-sb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items > div > h3 {
   font-size: 2.1rem;
   margin: 0;
   padding-bottom: 20px;
 }
+
+.close-container > svg {
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 .cart-items > a {
   text-decoration: none;
@@ -267,6 +284,9 @@ div > div > .cart-items {
 }
 
 .cart-stepper > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #cdcccc;
   text-align: center;
 }
@@ -473,6 +493,7 @@ a > button:hover {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   padding: 50px 0 0 100px;
+  margin-bottom: 17px;
 }
 
 .search {
@@ -1217,17 +1238,16 @@ a > button:hover {
 }
 
 @media (max-width: 1200px) {
-  div > .cart-items {
-    width: 50vw;
+  div > div > .cart-items {
+    width: 400px;
   }
 
-  div > .show {
-    transform: translate(2.55%, 10%);
+  div > div > .cart-items.show {
+    transform: translate(3.9%, 10%);
     animation: m-show-cart 0.4s ease-in-out;
   }
 
-  div > .not-show {
-    transform: translate(120%, 10%);
+  div > div > .cart-items.not-show {
     animation: m-hide-cart 0.4s ease-in-out;
   }
 
@@ -1387,17 +1407,17 @@ a > button:hover {
     width: 50vw;
   }
 
-  div > .show {
+  div > div > .cart-items.show {
     transform: translate(3.8%, 55%);
-    animation: m-show-cart 0.4s ease-in-out;
+    animation: t-show-cart 0.4s ease-in-out;
   }
 
-  div > .not-show {
+  div > div > .cart-items.not-show {
     transform: translate(120%, 55%);
-    animation: m-hide-cart 0.4s ease-in-out;
+    animation: t-hide-cart 0.4s ease-in-out;
   }
 
-  @keyframes m-show-cart {
+  @keyframes t-show-cart {
     from {
       transform: translate(120%, 55%);
     }
@@ -1407,9 +1427,9 @@ a > button:hover {
     }
   }
 
-  @keyframes m-hide-cart {
+  @keyframes t-hide-cart {
     from {
-      transform: translate(8%, 55%);
+      transform: translate(3.8%, 55%);
     }
 
     to {
@@ -1438,8 +1458,45 @@ a > button:hover {
     height: 20px;
   }
 
-  div > .cart-items {
-    width: 75vw;
+  .cart-quantity {
+    font-size: 0.8rem;
+  }
+
+  div > div > .cart-items.show{
+    transform: translate(5%, 55%);
+    width: 300px;
+  }
+
+  div > div > .cart-items.not-show {
+    width: 300px;
+  }
+
+  div > div > .cart-items > h3 {
+    font-size: 1.5rem;
+  }
+
+  .item-on-cart > img {
+    width: 50px;
+    height: 80px;
+  }
+
+  .title-price {
+    gap: 5px;
+  }
+
+  .title-price > * {
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  .item-on-cart > .cart-stepper > * {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .total {
+    font-size: 1.5rem;
   }
 
   .shop-nav > .books-category > h3 {
@@ -1528,6 +1585,47 @@ a > button:hover {
   }
 }
 
+@media(max-width: 500px) {
+  .cta > h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta > a > button {
+    width: 12rem;
+    font-size: 1.3rem;
+  }
+
+  div > div > .cart-items.show {
+    width: 300px;
+    animation: m-cart-show 0.4s ease-in-out;
+  }
+
+  div > div > .cart-items.not-show {
+    width: 300px;
+    animation: m-cart-hide 0.4s ease-in-out;
+  }
+
+  @keyframes m-cart-show {
+    0% {
+      transform: translate(120%, 55%);
+    }
+
+    100% {
+      transform: translate(5%, 55%);
+    }
+  }
+
+  @keyframes m-cart-hide {
+    0% {
+      transform: translate(5%, 55%);
+    }
+
+    100% {
+      transform: translate(120%, 55%);
+    }
+  }
+}
+
 @keyframes dropdown-expand {
   0% {
     transform: translateX(-100%);
@@ -1554,13 +1652,13 @@ a > button:hover {
   }
 
   100% {
-    transform: translate(2.7%, 5%);
+    transform: translate(3%, 5%);
   }
 }
 
 @keyframes hide-cart {
   0% {
-    transform: translate(2.7%, 5%);
+    transform: translate(3%, 5%);
   }
 
   100% {

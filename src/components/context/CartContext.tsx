@@ -13,6 +13,7 @@ type CartItem = {
 type ShoppingCartContextValues = {
   showCart: boolean;
   displayCart: () => void;
+  hideCart: () => void;
   getBookQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
   decreaseCartQuantity: (id: number) => void;
@@ -44,6 +45,10 @@ export const ShoppingCartProvider = ({
   const displayCart = () => {
     setShowCart(!showCart);
   };
+
+  const hideCart = () => {
+    setShowCart(false);
+  }
 
   const getBookQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -94,6 +99,7 @@ export const ShoppingCartProvider = ({
         cartQuantity,
         showCart,
         displayCart,
+        hideCart
       }}
     >
       {children}

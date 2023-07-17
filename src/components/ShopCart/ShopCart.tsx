@@ -3,12 +3,12 @@ import { useShoppingCart } from "../context/CartContext";
 import { ShopData } from "../../data/ShopData";
 import { Link } from "react-router-dom";
 
-
 export const ShopCart = () => {
   const {
     cartItems,
     showCart,
     displayCart,
+    hideCart,
     cartQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
@@ -92,7 +92,26 @@ export const ShopCart = () => {
         />
       </svg>
       <div className={`cart-items ${showCart ? "show" : "not-show"}`}>
-        <h3>{cartQuantity ? "My items" : "The cart is empty"}</h3>
+        <div className="fb-sb">
+          <h3>{cartQuantity ? "My items" : "The cart is empty"}</h3>
+          <div className="close-container" onClick={() => hideCart()}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="#434343"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M18 6L6 18M6 6l12 12"
+              />
+            </svg>
+          </div>
+        </div>
         {cartItems.map((item) => {
           const currentBook = ShopData.find((book) => book.id === item.id);
           if (currentBook === undefined) return -1;
@@ -104,10 +123,10 @@ export const ShopCart = () => {
               />
               <div className="title-price">
                 <h4>{currentBook.title}</h4>
-                <h6>$ {(item.quantity * currentBook.price) * 100 / 100}</h6>
+                <h6>$ {(item.quantity * currentBook.price * 100) / 100}</h6>
                 {
                   <p style={{ display: "none" }}>
-                    {(total += (item.quantity * currentBook.price) * 100 / 100)}
+                    {(total += (item.quantity * currentBook.price * 100) / 100)}
                   </p>
                 }
               </div>
@@ -122,7 +141,7 @@ export const ShopCart = () => {
         <hr />
         {cartQuantity ? (
           <>
-            <h4 className="total">{`Total: $${total * 100 / 100}`}</h4>
+            <h4 className="total">{`Total: $${(total * 100) / 100}`}</h4>
             <Link to="order-finish">
               <button
                 onMouseEnter={handleMouseEnter}
