@@ -44,7 +44,6 @@ body {
   align-items: center;
   justify-content: center;
   justify-content: center;
-  color: #fff;
   background: rgb(44, 44, 44);
   background: linear-gradient(
     270deg,
@@ -59,19 +58,7 @@ body {
   position: fixed;
   width: 100%;
   height: 120px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
-}
-
-.sdgdfsfdsfdsfds {
-  background: rgb(29, 29, 29);
-  background: linear-gradient(
-    270deg,
-    rgba(29, 29, 29, 1) 0%,
-    rgba(18, 18, 18, 1) 25%,
-    rgba(11, 11, 11, 1) 50%,
-    rgba(18, 18, 18, 1) 75%,
-    rgba(29, 29, 29, 1) 100%
-  );
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .header > a {
@@ -84,7 +71,7 @@ body {
   font-weight: 400;
   padding: 0;
   margin: 0;
-  color: #fff;
+  color: #eeeeee;
   letter-spacing: 0.07rem;
   padding-top: 25px;
 }
@@ -105,7 +92,7 @@ body {
 
 .header-links > a {
   text-decoration: none;
-  color: #f3f3f3;
+  color: #e4e4e4;
   margin: 0;
   padding: 0;
   font-size: 3rem;
@@ -370,12 +357,12 @@ div > .show {
   font-size: 1.5rem;
   bottom: 0;
   right: 0;
-  color: #fff;
+  color: #e4e4e4;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.32) 0%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
   );
   width: auto;
   height: auto;
@@ -401,7 +388,7 @@ a > button {
   );
   width: 17.7rem;
   height: 4rem;
-  color: #fff;
+  color: #e4e4e4;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1.5rem;
@@ -429,7 +416,6 @@ a > button:hover {
     rgba(18, 18, 18, 1) 75%,
     rgba(21, 21, 21, 1) 100%
   );
-  color: #f3f3f3;
 }
 
 .shop-nav {
@@ -451,6 +437,8 @@ a > button:hover {
   padding-bottom: 20px;
   align-self: start;
   margin: 0;
+  color: #d7d7d7;
+  opacity: 0.9;
 }
 
 .books-category {
@@ -470,6 +458,8 @@ a > button:hover {
   align-self: center;
   padding: 0 50px 0 20px;
   gap: 1px;
+  color: #d7d7d7;
+  opacity: 0.8;
 }
 
 .category:hover {
@@ -513,14 +503,14 @@ a > button:hover {
   border-radius: 20px;
   background-color: #353535;
   border: none;
-  color: #eeeeee;
+  color: #e4e4e4;
   padding: 0 10px 0 10px;
   margin: 0 0 50px 0;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4) inset;
 }
 
 .search::placeholder {
-  color: #eeeeee;
+  color: #e4e4e4;
 }
 
 .search:focus {
@@ -566,6 +556,7 @@ a > button:hover {
 .book > * {
   margin: 0;
   padding: 0;
+  color: #d7d7d7;
 }
 
 .book > h4 {
@@ -580,21 +571,21 @@ a > button:hover {
 .book-cover {
   width: 180px;
   height: 230px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .book-detail-container {
   display: grid;
   grid-template-rows: 120px 50px 1fr 50px;
   height: 100svh;
-  background: rgb(44, 44, 44);
+  background: rgb(29, 29, 29);
   background: linear-gradient(
     270deg,
-    rgba(44, 44, 44, 1) 0%,
-    rgba(27, 27, 27, 1) 25%,
-    rgba(20, 20, 20, 1) 50%,
-    rgba(27, 27, 27, 1) 75%,
-    rgba(44, 44, 44, 1) 100%
+    rgb(21, 21, 21) 0%,
+    rgba(18, 18, 18, 1) 25%,
+    rgba(15, 15, 15, 1) 50%,
+    rgba(18, 18, 18, 1) 75%,
+    rgba(21, 21, 21, 1) 100%
   );
   color: #f3f3f3;
   padding: 0 14px 0 22px;
@@ -605,17 +596,18 @@ a > button:hover {
   grid-template-rows: 1fr;
   grid-template-columns: auto 1fr 1fr;
   grid-row: 3 / 4;
-  background: rgb(51, 51, 51);
   background: linear-gradient(
-    270deg,
-    rgba(51, 51, 51, 1) 0%,
-    rgba(61, 61, 61, 1) 50%,
-    rgba(51, 51, 51, 1) 100%
+    90deg,
+    hsl(0, 10%, 14%) 0%,
+    hsl(0, 9%, 11%) 0%,
+    hsl(0, 10%, 14%) 0%
   );
+  border: 2px solid #444444;
   padding: 30px;
   border-radius: 4px;
   gap: 5%;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 4px 0 hsla(180, 1%, 23%, 0.5);
+  color: #d7d7d7;
 }
 
 .book-detail > * {
@@ -647,7 +639,7 @@ a > button:hover {
   padding: 12px 0 0 0;
   width: 300px;
   height: 100%;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .title-author {
@@ -748,7 +740,7 @@ a > button:hover {
     rgba(14, 67, 131, 1) 100%
   );
   border: 1px solid #313131;
-  color: #f9f9f9;
+  color: #e7e7e7;
   font-size: 1.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -806,6 +798,7 @@ a > button:hover {
 .m-title-author > * {
   margin: 0;
   padding: 0;
+  color: #e4e4e4;
 }
 
 .m-title-author > h4 {
@@ -824,7 +817,7 @@ a > button:hover {
 
 .cart-manage > *:hover,
 .cart-manage > .stepper:hover {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12) inset;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4) inset;
 }
 
 .m-cart-manage {
@@ -850,17 +843,17 @@ a > button:hover {
   color: #eeeeee;
   cursor: pointer;
   border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   border: none;
 }
 
 .stepper > button:last-of-type {
   background-color: #131313;
   font-size: 18px;
-  color: #eeeeee;
+  color: #d7d7d7;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
   border: none;
 }
 
@@ -870,19 +863,19 @@ a > button:hover {
   height: 40px;
   text-align: center;
   font-size: 18px;
-  background-color: #eeeeee;
+  background-color: #d7d7d7;
   color: #000;
   text-align: center;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .stepper > button:first-of-type:hover,
 .stepper > button:last-of-type:hover,
 .stepper > div:hover {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5) inset;
 }
 
 .remove {
@@ -892,7 +885,7 @@ a > button:hover {
   background-color: #e82b2b;
   color: #eeeeee;
   cursor: pointer;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   justify-self: start;
   font-size: 0.9rem;
   font-weight: 500;
@@ -900,7 +893,7 @@ a > button:hover {
 }
 
 .remove:hover {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5) inset;
 }
 
 .m-header {
@@ -908,7 +901,7 @@ a > button:hover {
   grid-row: 1 / 2;
   grid-template-rows: 1fr;
   grid-template-columns: auto 1fr auto;
-  color: #fff;
+  color: #eeeeee;
   background: rgb(29, 29, 29);
   background: linear-gradient(
     270deg,
@@ -923,12 +916,11 @@ a > button:hover {
   position: fixed;
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid #bdbbbb;
 }
 
 .m-header > a > h1 {
   font-family: "Edensor";
-  color: #fff;
+  color: #eeeeee;
   font-size: 3rem;
   margin: 0;
   padding: 0;
@@ -1038,14 +1030,14 @@ a > button:hover {
   grid-template-columns: 8fr 4fr;
   height: 100svh;
   overflow: auto;
-  background: rgb(44, 44, 44);
+  background: rgb(29, 29, 29);
   background: linear-gradient(
     270deg,
-    rgba(44, 44, 44, 1) 0%,
-    rgba(27, 27, 27, 1) 25%,
-    rgba(20, 20, 20, 1) 50%,
-    rgba(27, 27, 27, 1) 75%,
-    rgba(44, 44, 44, 1) 100%
+    rgb(21, 21, 21) 0%,
+    rgba(18, 18, 18, 1) 25%,
+    rgba(15, 15, 15, 1) 50%,
+    rgba(18, 18, 18, 1) 75%,
+    rgba(21, 21, 21, 1) 100%
   );
   color: #f3f3f3;
   padding: 0 15px 0 17px;
@@ -1062,11 +1054,11 @@ a > button:hover {
   background: rgb(65, 65, 65);
   background: linear-gradient(
     90deg,
-    rgba(65, 65, 65, 1) 0%,
-    rgba(55, 55, 55, 1) 50%,
-    rgba(65, 65, 65, 1) 100%
+    hsl(206, 10%, 14%) 0%,
+    hsl(204, 9%, 11%) 0%,
+    hsl(206, 10%, 14%) 0%
   );
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);
   padding: 17px;
   margin-bottom: 17px;
   border-radius: 8px;
@@ -1080,6 +1072,7 @@ a > button:hover {
   font-size: 1.3rem;
   vertical-align: top;
   line-height: 1;
+  color: #d7d7d7;
 }
 
 .cart-full-view > h2 {
@@ -1087,7 +1080,7 @@ a > button:hover {
   padding: 0 0 20px 0;
   font-size: 2.3rem;
   font-weight: 500;
-  color: #fff;
+  color: #d7d7d7;
 }
 
 .order-finish-item {
@@ -1113,6 +1106,7 @@ a > button:hover {
   padding: 0;
   align-self: start;
   line-height: 1;
+  color: #d7d7d7;
 }
 
 .order-finish-name > h4 {
@@ -1147,17 +1141,18 @@ a > button:hover {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   grid-template-columns: 1fr;
-  background: rgb(34, 50, 57);
+  background: rgb(65, 65, 65);
   background: linear-gradient(
     90deg,
-    rgba(34, 50, 57, 1) 0%,
-    rgba(32, 48, 55, 1) 50%,
-    rgba(34, 50, 57, 1) 100%
+    hsl(203, 13%, 19%) 0%,
+    hsl(204, 9%, 11%) 0%,
+    hsl(203, 13%, 19%) 0%
   );
   height: 50%;
   padding: 17px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);
   border-radius: 8px;
+  color: #d7d7d7;
 }
 
 .purchase-summary > h3 {
@@ -1208,23 +1203,27 @@ a > button:hover {
   width: 100%;
   height: 35px;
   border-radius: 6px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
   padding: 0;
   margin-top: 20px;
   cursor: pointer;
   background-color: #1862f4;
-  color: #fff;
+  color: #e4e4e4;
   font-size: 1.3rem;
   font-weight: 500;
   border: 1px solid #2e2e2e;
 }
 
 .purchase-summary > button:hover {
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3) inset;
 }
 
 .purchase-summary > hr {
   opacity: 0.2;
+}
+
+.m-book-detail {
+  color: #e4e4e4;
 }
 
 .m-book-detail > img {

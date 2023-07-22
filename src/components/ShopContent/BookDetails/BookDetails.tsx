@@ -84,7 +84,7 @@ export const BookDetails = (props: BookDetailsProps) => {
             <div className="buy-book">
               <div className="price-button">
                 <h3>
-                  Price:<span> ${currentBook.price}</span>
+                  Price:<span> $ {currentBook.price}</span>
                 </h3>
                 <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
                 {quantity === 0 ? (
