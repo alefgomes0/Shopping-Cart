@@ -1,12 +1,12 @@
+import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header/Header";
-import { NoMatch } from "./components/NoMatch/NoMatch";
-import { HomeContent } from "./components/HomeContent/HomeContent";
-import { ShopContent } from "./components/ShopContent/ShopContent";
-import { AboutContent } from "./components/AboutContent/AboutContent";
-import { ContactContent } from "./components/ContactContent/ContactContent";
-import "./App.css";
+import { HomeContent } from "./pages/Home/HomeContent";
+import { ShopContent } from "./pages/Shop/ShopContent";
+import { AboutContent } from "./pages/About/AboutContent";
+import { ContactContent } from "./pages/Contact/ContactContent";
+import { NoMatch } from "./pages/NoMatch/NoMatch";
 import { BookDetails } from "./components/ShopContent/BookDetails/BookDetails";
 import { ShoppingCartProvider } from "./components/context/CartContext";
 import { OrderFinish } from "./pages/OrderFinish/OrderFinish";

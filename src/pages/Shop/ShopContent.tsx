@@ -1,6 +1,6 @@
-import { ShopNav } from "./ShopNav/ShopNav";
-import { SearchBar } from "./SearchBar/SearchBar";
-import { ShopBooks } from "./ShopBooks/ShopBooks";
+import { ShopNav } from "../../components/ShopContent/ShopNav/ShopNav";
+import { SearchBar } from "../../components/ShopContent/SearchBar/SearchBar";
+import { ShopBooks } from "../../components/ShopContent/ShopBooks/ShopBooks";
 import { ShopData } from "../../data/ShopData";
 import { BookDataType } from "../../data/ShopDataType";
 import { useState } from "react";

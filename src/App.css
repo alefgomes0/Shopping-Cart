@@ -596,13 +596,14 @@ a > button:hover {
   grid-template-rows: 1fr;
   grid-template-columns: auto 1fr 1fr;
   grid-row: 3 / 4;
+  background: rgb(38, 38, 38);
   background: linear-gradient(
     90deg,
-    hsl(0, 10%, 14%) 0%,
-    hsl(0, 9%, 11%) 0%,
-    hsl(0, 10%, 14%) 0%
+    rgba(38, 38, 38, 1) 0%,
+    rgba(32, 32, 32, 1) 50%,
+    rgba(38, 38, 38, 1) 100%
   );
-  border: 2px solid #444444;
+  border: 2px solid #4f4f4f;
   padding: 30px;
   border-radius: 4px;
   gap: 5%;
