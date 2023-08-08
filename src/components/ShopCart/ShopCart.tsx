@@ -91,7 +91,9 @@ export const ShopCart = () => {
           d="M160 288h249.44a8 8 0 0 0 7.85-6.43l28.8-144a8 8 0 0 0-7.85-9.57H128"
         />
       </svg>
-      <div className={`cart-items ${showCart ? "show" : "not-show"}`}>
+      <div
+        className={`cart-items ${showCart ? "show" : "not-show"}`}
+      >
         <div className="fb-sb">
           <h3>{cartQuantity ? "My items" : "The cart is empty"}</h3>
           <div className="close-container" onClick={() => hideCart()}>
