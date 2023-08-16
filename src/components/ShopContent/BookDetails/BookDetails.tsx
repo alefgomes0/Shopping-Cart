@@ -86,7 +86,9 @@ export const BookDetails = (props: BookDetailsProps) => {
                 <h3>
                   Price:<span> $ {currentBook.price}</span>
                 </h3>
-                <h5>Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY</h5>
+                <h5>
+                  Estimated delivery time between XXXX-XX-XX and YYYY-YY-YY
+                </h5>
                 {quantity === 0 ? (
                   <button
                     className="add-to-cart"
@@ -109,7 +111,12 @@ export const BookDetails = (props: BookDetailsProps) => {
                         +
                       </button>
                     </div>
-                    <button className="remove" onClick={() => removeFromCart(currentBook.id)}>Remove</button>
+                    <button
+                      className="remove"
+                      onClick={() => removeFromCart(currentBook.id)}
+                    >
+                      Remove
+                    </button>
                   </div>
                 )}
               </div>
@@ -150,7 +157,12 @@ export const BookDetails = (props: BookDetailsProps) => {
                     +
                   </button>
                 </div>
-                <button className="remove" onClick={() => removeFromCart(currentBook.id)}>Remove</button>
+                <button
+                  className="remove"
+                  onClick={() => removeFromCart(currentBook.id)}
+                >
+                  Remove
+                </button>
               </div>
             )}
             <div className="m-book-synopsis">

@@ -10,6 +10,7 @@ import { NoMatch } from "./pages/NoMatch/NoMatch";
 import { BookDetails } from "./components/ShopContent/BookDetails/BookDetails";
 import { ShoppingCartProvider } from "./components/context/CartContext";
 import { OrderFinish } from "./pages/OrderFinish/OrderFinish";
+import { Footer } from "./components/Footer/Footer";
 
 export const App = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 820);
@@ -42,6 +43,7 @@ export const App = () => {
           <Route path="contact" element={<ContactContent />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ShoppingCartProvider>
   );

@@ -47,12 +47,14 @@ export const ShopContent = () => {
   searchResult = filterByGenre(searchResult, selectedGenres);
 
   return (
-    <div className="shop-content">
-      <ShopNav genreList={ShopData} onClick={handleClick} />
-      <div className="main-content">
-        <SearchBar query={query} onChange={handleChange} />
-        <ShopBooks bookList={searchResult} />
+    <main>
+      <div className="shop-content">
+        <ShopNav genreList={ShopData} onClick={handleClick} />
+        <div className="main-content">
+          <SearchBar query={query} onChange={handleChange} />
+          <ShopBooks bookList={searchResult} />
+        </div>
       </div>
-    </div>
+    </main>
   );
 };

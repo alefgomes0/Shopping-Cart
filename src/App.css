@@ -116,6 +116,10 @@ body {
   margin-top: 10px;
 }
 
+.home-content {
+  overflow: hidden;
+}
+
 .cart-container {
   position: relative;
   display: flex;
@@ -316,10 +320,7 @@ div > .show {
   padding: 15px 0;
 }
 
-.home-content {
-  width: 100%;
-  height: 100%;
-}
+
 
 .image-container {
   width: 100vw;
@@ -405,8 +406,8 @@ a > button:hover {
   display: grid;
   grid-template-rows: 120px 1fr;
   grid-template-columns: auto 8fr;
-  height: 100svh;
-  overflow: auto;
+  min-height: 100svh;
+  overflow: hidden;
   background: rgb(29, 29, 29);
   background: linear-gradient(
     270deg,
@@ -526,7 +527,6 @@ a > button:hover {
   grid-template-rows: repeat(auto-fit, minmax(clamp(100px, 300px, 400px), 1fr));
   grid-row: -2 / -1;
   gap: 20px;
-  justify-items: start;
 }
 
 .books-display > a,
@@ -1238,6 +1238,32 @@ a > button:hover {
 .purchase-summary > hr {
   opacity: 0.2;
 }
+
+footer {
+  display: flex;
+  gap: 8px;
+  height: 25px;
+  background-color: #242424;
+  align-items: center;
+  align-content: center;
+  padding: 0 15px 0 17px;
+}
+
+footer > * {
+  color: #eeeeee;
+  margin: 0;
+  padding: 0;
+}
+
+footer > a {
+  display: flex;
+}
+
+footer > a > svg {
+  margin: 0;
+  padding: 0;
+}
+
 
 .m-book-detail {
   color: #e4e4e4;
