@@ -377,7 +377,7 @@ div > .show {
   text-align: center;
   max-width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 17px 0 0;
 }
 
 a > button {
@@ -393,7 +393,7 @@ a > button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1.5rem;
-  margin: 0;
+  margin: 0 17px 0 0;
   padding: 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 }

@@ -2,13 +2,23 @@ import { useState, useRef, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { ShopCart } from "../ShopCart/ShopCart";
 
-type HeaderProps = {
-  isDesktop: boolean;
-};
 
-export const Header = (props: HeaderProps) => {
+export const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const dropdown = useRef<HTMLDivElement>(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 820);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 820);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const closeDropdown = (e: MouseEvent) => {
@@ -30,7 +40,7 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <>
-      {props.isDesktop ? (
+      {isDesktop ? (
         <header>
           <div className="header">
             <NavLink to="/">

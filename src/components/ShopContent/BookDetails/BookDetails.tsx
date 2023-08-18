@@ -1,12 +1,24 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ShopData } from "../../../data/ShopData";
 import { useShoppingCart } from "../../context/CartContext";
 
-type BookDetailsProps = {
-  isDesktop: boolean;
-};
 
-export const BookDetails = (props: BookDetailsProps) => {
+export const BookDetails = () => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 820);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 820);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const { bookId } = useParams();
   let currentBook = ShopData.filter((book) => book.id === Number(bookId))[0];
   const {
@@ -20,7 +32,7 @@ export const BookDetails = (props: BookDetailsProps) => {
 
   return (
     <div>
-      {props.isDesktop ? (
+      {isDesktop ? (
         <div className="book-detail-container">
           <div className="book-detail">
             <img

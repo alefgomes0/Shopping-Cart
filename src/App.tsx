@@ -1,5 +1,4 @@
 import "./App.css";
-import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import { HomeContent } from "./pages/Home/HomeContent";
@@ -13,30 +12,16 @@ import { OrderFinish } from "./pages/OrderFinish/OrderFinish";
 import { Footer } from "./components/Footer/Footer";
 
 export const App = () => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 820);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 820);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <ShoppingCartProvider>
       <BrowserRouter>
-        <Header isDesktop={isDesktop} />
+        <Header />
         <Routes>
           <Route path="/" element={<HomeContent />} />
           <Route path="shop" element={<ShopContent />} />
           <Route
             path="shop/:bookId"
-            element={<BookDetails isDesktop={isDesktop} />}
+            element={<BookDetails />}
           />
           <Route path="order-finish" element={<OrderFinish />} />
           <Route path="about" element={<AboutContent />} />
