@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useShoppingCart } from "../context/CartContext";
 import { ShopData } from "../../data/ShopData";
 import { Link } from "react-router-dom";
+import { roundUpToTwoDecimalPlaces } from "../../utils/RoundUp";
 
 export const ShopCart = () => {
   const {
@@ -91,9 +92,7 @@ export const ShopCart = () => {
           d="M160 288h249.44a8 8 0 0 0 7.85-6.43l28.8-144a8 8 0 0 0-7.85-9.57H128"
         />
       </svg>
-      <div
-        className={`cart-items ${showCart ? "show" : "not-show"}`}
-      >
+      <div className={`cart-items ${showCart ? "show" : "not-show"}`}>
         <div className="fb-sb">
           <h3>{cartQuantity ? "My items" : "The cart is empty"}</h3>
           <div className="close-container" onClick={() => hideCart()}>
@@ -119,10 +118,12 @@ export const ShopCart = () => {
           if (currentBook === undefined) return -1;
           return (
             <div className="item-on-cart" key={item.id}>
-              <img
-                src={process.env.PUBLIC_URL + currentBook.url}
-                alt={currentBook.alt}
-              />
+              <Link to={`/shop/${item.id}`}>
+                <img
+                  src={process.env.PUBLIC_URL + currentBook.url}
+                  alt={currentBook.alt}
+                />
+              </Link>
               <div className="title-price">
                 <h4>{currentBook.title}</h4>
                 <h6>$ {(item.quantity * currentBook.price * 100) / 100}</h6>
@@ -143,7 +144,7 @@ export const ShopCart = () => {
         <hr />
         {cartQuantity ? (
           <>
-            <h4 className="total">{`Total: $${(total * 100) / 100}`}</h4>
+            <h4 className="total">{`Total: $${roundUpToTwoDecimalPlaces(total)}`}</h4>
             <Link to="order-finish">
               <button
                 onMouseEnter={handleMouseEnter}

@@ -7,7 +7,7 @@ export const HomeContent = () => {
         <div className="image-container" role="img">
           <div className="cta">
             <h2>You want, we have it</h2>
-            <Link to="/shop">
+            <Link to="/shop" onClick={() => window.scrollTo({ top: 0 })}>
               <button>Start shopping</button>
             </Link>
           </div>

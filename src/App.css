@@ -168,6 +168,7 @@ div > div > .cart-items {
   padding: 25px 16px;
   overflow: auto;
   gap: 16px;
+  opacity: 0.95;
 }
 
 .cart-items > * {
@@ -252,7 +253,7 @@ div > div > .cart-items {
   padding-bottom: 25px;
 }
 
-.item-on-cart > img {
+.item-on-cart > a > img {
   height: 160px;
   width: 100px;
   grid-column: 1 / 2;
@@ -320,8 +321,6 @@ div > .show {
   padding: 15px 0;
 }
 
-
-
 .image-container {
   width: 100vw;
   height: 100svh;
@@ -365,11 +364,10 @@ div > .show {
     rgba(0, 0, 0, 0.2) 0%,
     rgba(0, 0, 0, 0.6) 100%
   );
-  width: auto;
-  height: auto;
+  width: min-width;
+  height: min-height;
   gap: 10px;
-  padding: 45px 17px;
-  margin: 0;
+  padding: 17px 17px;
 }
 
 .cta > h2 {
@@ -380,6 +378,12 @@ div > .show {
   padding: 0 17px 0 0;
 }
 
+.cta > a {
+  width: 100%;
+  padding: 0 17px 0 12px;
+  margin: 0;
+}
+
 a > button {
   background: rgb(63, 94, 251);
   background: linear-gradient(
@@ -387,15 +391,16 @@ a > button {
     rgba(63, 94, 251, 1) 0%,
     rgba(33, 59, 186, 1) 100%
   );
-  width: 17.7rem;
-  height: 4rem;
+  width: 100%;
+  height: min-height;
   color: #e4e4e4;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1.5rem;
-  margin: 0 17px 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 10px 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
 a > button:hover {
@@ -1264,7 +1269,6 @@ footer > a > svg {
   padding: 0;
 }
 
-
 .m-book-detail {
   color: #e4e4e4;
 }
@@ -1422,8 +1426,8 @@ footer > a > svg {
 }
 
 @media (max-width: 900px) {
-  div > div> .cart-items {
-    width: 60vw;
+  div > div > .cart-items {
+    width: 80vw;
   }
 
   .buy-book {
@@ -1636,14 +1640,17 @@ footer > a > svg {
 @media (max-width: 500px) {
   .cta > h2 {
     font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .cta > a {
+    padding: 0;
   }
 
   .cta > a > button {
-    width: 12rem;
     font-size: 1.3rem;
   }
 }
-
 
 @keyframes button-arrow {
   0% {
