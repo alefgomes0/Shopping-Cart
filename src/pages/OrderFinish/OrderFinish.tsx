@@ -1,5 +1,6 @@
 import { useShoppingCart } from "../../components/context/CartContext";
 import { ShopData } from "../../data/ShopData";
+import { roundUpToTwoDecimalPlaces } from "../../utils/RoundUp";
 
 export const OrderFinish = () => {
   let total: number = 0;
@@ -38,10 +39,10 @@ export const OrderFinish = () => {
                   </button>
                 </div>
                 <h5 className="q">
-                  $ {(item.quantity * currentBook.price * 100) / 100}
+                  $ {roundUpToTwoDecimalPlaces(item.quantity * currentBook.price)}
                 </h5>
                 <p style={{ display: "none" }}>
-                  {(total += (item.quantity * currentBook.price * 100) / 100)}
+                  {(total = roundUpToTwoDecimalPlaces(total + (item.quantity * currentBook.price)))}
                 </p>
                 <svg
                   onClick={() => removeFromCart(item.id)}
