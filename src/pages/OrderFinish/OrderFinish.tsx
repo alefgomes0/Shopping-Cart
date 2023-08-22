@@ -12,7 +12,7 @@ export const OrderFinish = () => {
     decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart();
-  const shipment = Math.floor(Math.random() * 10);
+  const shipment = cartItems.length === 0 ? 0 : Math.floor(Math.random() * 10);
 
   return (
     <main>
