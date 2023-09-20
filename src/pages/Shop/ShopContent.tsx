@@ -4,20 +4,25 @@ import { ShopBooks } from "../../components/ShopContent/ShopBooks/ShopBooks";
 import { ShopData } from "../../data/ShopData";
 import { BookDataType } from "../../data/ShopDataType";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export const ShopContent = () => {
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams({ q: "" });
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+  const query = searchParams.get("q");
 
   const filterBooks = (books: BookDataType[], query: string) => {
     query = query.toLowerCase().trim();
     return books.filter((book) => book.title.toLowerCase().includes(query));
   };
 
-  let searchResult = filterBooks(ShopData, query);
+  let searchResult = filterBooks(ShopData, query as string);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+    setSearchParams((prev) => {
+      prev.set("q", e.target.value);
+      return prev;
+    }, { replace: true });
   };
 
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {

@@ -6,8 +6,8 @@ export const ShopBooks = (props: { bookList: BookDataType[] }) => {
     <div className="books-display">
       {props.bookList.map((book) => {
         return (
-          <Link to={`/shop/${book.id}`} >
-            <div className="book" key={book.id}>
+          <Link to={`/shop/${book.id}`} key={book.id} >
+            <div className="book">
               <img
                 src={process.env.PUBLIC_URL + book.url}
                 alt={book.alt}
